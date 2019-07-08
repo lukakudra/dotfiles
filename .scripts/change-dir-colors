@@ -1,0 +1,3 @@
+#!/bin/sh
+papirus-folders -C grey --theme Papirus-Dark
+papirus-folders -C blue --theme Papirus

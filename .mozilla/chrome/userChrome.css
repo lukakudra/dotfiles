@@ -1,0 +1,42 @@
+:root {
+  --equilux: #373737;
+  --arc-dark: #29303a;
+  --adapta-nokto: #263238;
+  --pop: #574e4a;
+  --dark:  #121212;
+
+  /* Main Color */
+  --main-color: #F2F2F2;
+}
+
+/* Disable tab overflow */
+/* Note: won't work if there is a "flexible space" in front/back of tab bar */
+.tabbrowser-tab {
+    min-width: initial !important;
+}
+.tab-content {
+    overflow: hidden !important;
+}
+
+#browser vbox#appcontent tabbrowser,
+#content,
+#tabbrowser-tabpanels,
+browser[type=content-primary],
+browser[type=content] > html {
+  background: var(--main-color) !important;
+} 
+
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+@-moz-document url(chrome://browser/content/browser.xul) {
+  .browserContainer > findbar{
+    -moz-box-ordinal-group: 0 !important;
+    margin-top:-1px !important;
+  }
+  .findbar-closebutton {
+    -moz-box-ordinal-group: 0 !important;
+  }
+    .findbar-container spacer {
+    visibility: collapse !important;
+  }
+}

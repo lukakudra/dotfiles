@@ -1,0 +1,2 @@
+#!/bin/sh
+scrot -s /home/luka/Pictures/screenshots/screenshot-$(date +%F_%T).png 

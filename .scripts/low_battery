@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# make the environment for cron
+environs=`pidof dbus-daemon | tr ' ' '\n' | awk '{printf "/proc/%s/environ ", $1}'`
+export DBUS_SESSION_BUS_ADDRESS=`cat $environs 2>/dev/null | tr '\0' '\n' | grep DBUS_SESSION_BUS_ADDRESS | cut -d '=' -f2-`
+export DISPLAY=:0
+
+status=$(cat /sys/class/power_supply/BAT0/status)
+charging="Charging"
+critical=15
+capacity=$(cat /sys/class/power_supply/BAT0/capacity)
+
+if [ $status = $charging ]; then
+  exit
+fi
+
+if [ "$capacity" -lt "$critical" ]; then
+
+    notify-send -u critical "Battery critically low"
+fi

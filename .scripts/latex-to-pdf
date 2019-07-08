@@ -1,0 +1,11 @@
+#!/bin/sh
+
+input="$1"
+extension="$input"
+name="${extension%%.*}"; extension="${extension#*.}"
+dot="."
+
+pdflatex "$name$dot$extension"
+bibtex "$name"
+pdflatex "$name$dot$extension"
+pdflatex "$name$dot$extension"

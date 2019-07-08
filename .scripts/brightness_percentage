@@ -1,0 +1,13 @@
+#!/bin/sh
+
+min=0
+max=$(cat /sys/class/backlight/intel_backlight/max_brightness)
+value=$(cat /sys/class/backlight/intel_backlight/actual_brightness)
+
+numerator=($value - $min)
+denominator=($max - $min)
+
+result=$(bc <<< "scale=0;$numerator*100/$denominator")
+
+echo $result
+

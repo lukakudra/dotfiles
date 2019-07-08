@@ -1,0 +1,51 @@
+#!/bin/sh
+
+if tmux ls > /dev/null 2>&1
+then
+    tmux -2 attach-session -d
+else
+    # shell pane 0
+    tmux new-session -c $PWD -d 'bash'
+
+    # shell pane 1
+    tmux new-window -n bash -c $PWD -d 'bash'
+
+    # bashmount pane
+    tmux new-window -n bashmount -c $HOME
+    tmux send-keys 'bashmount' 'Enter'
+    tmux select-pane -t 0
+
+    # bc calculator pane
+    tmux new-window -n calc -c $HOME
+    tmux send-keys 'bc' 'Enter'
+    tmux select-pane -t 0
+
+    # vim pane
+    # tmux new-window -n vim -c $PWD
+    # tmux send-keys 'vim' 'Enter'
+    # tmux select-pane -t 0
+
+    # vifm pane
+    # tmux new-window -n vifm -c $PWD
+    # tmux send-keys 'vifmrun' 'Enter'
+    # tmux select-pane -t 0
+
+    # ranger file manager pane
+    # tmux new-window -n ranger -c $PWD
+    # tmux send-keys 'ranger' 'Enter'
+    # tmux select-pane -t 0
+
+    # music pane
+    # tmux new-window -n mocp -c $HOME/Music/GLAZBA
+    # tmux send-keys 'mocp' 'Enter'
+    # tmux select-pane -t 0
+    # or
+    # tmux send-keys -t music 'mocp' 'Enter'
+    # tmux split-window -v -p 20 -t music
+    # tmux send-keys -t music 'cava' 'Enter'
+    # tmux select-pane -t 0
+    
+    tmux select-window -t 1
+    tmux -2 attach-session -d
+fi
+

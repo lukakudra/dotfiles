@@ -1,0 +1,2 @@
+#!/bin/sh
+iw dev wlp3s0 set power_save off

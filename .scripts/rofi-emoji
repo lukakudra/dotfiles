@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Original author of this script is Luke Smith from lukesmith.xyz
+
+grep -v "#" /home/luka/.scripts/emoji | rofi -dmenu -i -p "emoji" | awk '{print $1}' | tr -d '\n' | xclip -selection clipboard
+
+# pgrep -x dunst >/dev/null && notify-send "$(xclip -o -selection clipboard) copied to clipboard"
+
