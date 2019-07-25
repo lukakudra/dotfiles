@@ -3,6 +3,7 @@ let mapleader = " "
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
+Plug 'chriskempson/base16-vim'
 " Plug 'morhetz/gruvbox'
 " Plug 'ericbn/vim-solarized'
 " Plug 'NLKNguyen/papercolor-theme'
@@ -18,11 +19,17 @@ call plug#end()
     set encoding=utf-8
     set number
     " set termguicolors
-    colorscheme ron
+    " colorscheme ron
     set background=dark
     " set clipboard=unnamedplus
     " set term=rxvt-unicode-256color
     " set term=xterm-256color
+
+" Set colorscheme to match the one from the shell
+    if filereadable(expand("~/.vimrc_background"))
+     let base16colorspace=256
+      source ~/.vimrc_background
+    endif
 
 " Mouse support:
     set mouse=a
