@@ -173,8 +173,33 @@ XTerm*on3Clicks: regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]]
 *VT100.Translations: #override \n\
   Alt <Key>o: exec-formatted("firefox '%t'", PRIMARY) select-start() select-end()
 
-! this enables font change with keyboard shortcuts
-!XTerm.vt100.translations: #override \n\
-  !Alt <Key> minus: smaller-vt-font() \n\
-  !Alt <Key> plus: larger-vt-font()
 
+!#################################
+!###### Urxvt configuration ######
+!#################################
+! urxvt
+URxvt*intensityStyles: true
+URxvt*buffered: true
+URxvt*cursorBlink: false
+! URxvt*letterSpace: -1
+URxvt*font: xft:inconsolata:size=12
+URxvt*scrollBar: false
+! URxvt*loginShell: true
+URxvt*secondaryScroll: true     # Enable Shift-PageUp/Down in screen
+URxvt*saveLines: 5000
+URxvt*perl-ext-common: default,matcher,resize-font,url-select,keyboard-select
+URxvt*colorUL: #4682B4
+!! url-select
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: firefox
+URxvt.url-select.underline: true
+! URxvt.urlLauncher: firefox
+!! keyboard-select
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keyboard-select.clipboard: true
+!! resize-font
+URxvt.resize-font.smaller: C-minus
+URxvt.resize-font.bigger: C-plus
+URxvt.resize-font.reset: C-0
+!! matcher
+URxvt.url-launcher: firefox

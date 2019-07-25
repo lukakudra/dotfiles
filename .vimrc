@@ -3,7 +3,7 @@ let mapleader = " "
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
 " Plug 'ericbn/vim-solarized'
 " Plug 'NLKNguyen/papercolor-theme'
 Plug 'scrooloose/nerdcommenter'
@@ -17,12 +17,12 @@ call plug#end()
     syntax enable
     set encoding=utf-8
     set number
-    set termguicolors
-    " let g:solarized_italic=0
-    colorscheme gruvbox
+    " set termguicolors
+    colorscheme ron
     set background=dark
     " set clipboard=unnamedplus
-    set term=xterm-256color
+    " set term=rxvt-unicode-256color
+    " set term=xterm-256color
 
 " Mouse support:
     set mouse=a

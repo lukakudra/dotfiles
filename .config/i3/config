@@ -10,6 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $term --no-startup-id $TERMINAL
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -37,7 +38,7 @@ exec --no-startup-id greenclip daemon
 exec --no-startup-id /usr/bin/dunst
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id $term
 
 # kill focused window but do not kill the scratchpad window
 bindsym $mod+q   [con_id="__focused__" instance="^(?!dropdown).*$"] kill
@@ -53,7 +54,7 @@ bindsym $mod+d exec --no-startup-id rofi -show run
 
 
 # dropdown terminal
-exec --no-startup-id xterm -name "dropdown" -e tmuxdd &
+exec --no-startup-id $term -name "dropdown" -e tmuxdd &
 
 bindsym $mod+z [instance="dropdown"] scratchpad show, move position center
 
@@ -63,10 +64,10 @@ move scratchpad
 # start frequently used programs with keyboard shortcuts
 bindsym $mod+Shift+Return exec --no-startup-id samedir
 bindsym $mod+i exec --no-startup-id firefox
-bindsym $mod+e exec --no-startup-id xterm -e vifmrun
+bindsym $mod+e exec --no-startup-id $term -e vifm
 bindsym $mod+p exec --no-startup-id thunderbird
-bindsym $mod+v exec --no-startup-id xterm -e vim
-bindsym $mod+m exec --no-startup-id xterm -e mocp
+bindsym $mod+v exec --no-startup-id $term -e vim
+bindsym $mod+m exec --no-startup-id $term -e mocp
 bindsym Print --release exec --no-startup-id print-screen-to-clipboard # needs to have scrot installed
 bindsym Shift+Print --release exec --no-startup-id print-screen-to-file # needs to have scrot installed
 bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' # uses greenclip and rofi to show a clipboard
@@ -75,8 +76,8 @@ bindsym $mod+n exec --no-startup-id networkmanager_dmenu
 bindsym $mod+Shift+w exec --no-startup-id rofi -show window
 bindsym $mod+Shift+n exec --no-startup-id networ-manager-restart
 bindsym $mod+Shift+d exec --no-startup-id displayselect
-bindsym $mod+comma exec --no-startup-id xterm -e weather-nova-gradiska
-bindsym $mod+period exec --no-startup-id xterm -e weather-zagreb
+bindsym $mod+comma exec --no-startup-id $term -e weather-nova-gradiska
+bindsym $mod+period exec --no-startup-id $term -e weather-zagreb
 
 
 # volume keys
@@ -84,8 +85,8 @@ bindsym XF86AudioRaiseVolume exec pactl-increase-volume-wrapper # increase volum
 bindsym $mod+Shift+greater exec pactl-increase-volume-wrapper # increase volume by 10%
 bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume 0 -10% # decrease volume by 10%
 bindsym $mod+less exec pactl -- set-sink-volume 0 -10% # decrease volume by 10%
-bindsym XF86AudioMute exec pactl set-sink-mute 0 1 # mute sound
-bindsym Shift+XF86AudioMute exec pactl set-sink-mute 0 0 # unmute sound
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioMicMute exec pactl set-source-mute 1 toggle
 
 # brightness keys (requires program light)
 bindsym XF86MonBrightnessUp exec light -A 10 # increase brightness by 10% 
@@ -93,7 +94,7 @@ bindsym Control+Shift+greater exec light -A 10 # increase brightness by 10%
 bindsym XF86MonBrightnessDown exec light -U 10 # decrease brightness by 10% 
 bindsym Control+less exec light -U 10 # decrease brightness by 10% 
 bindsym XF86ScreenSaver exec light -S 0 # set brightness to 0
-bindsym Shift+XF86ScreenSaver exec light -S 70 # set brightness to 70
+bindsym Shift+XF86ScreenSaver exec light -S 100 # set brightness to 100 
 
 # toggle touchpad
 bindsym XF86TouchpadToggle exec toggle-touchpad
@@ -196,7 +197,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i4' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i4' 'i3-msg exit'"
 
 
 # resize window (you can also use the mouse for that)

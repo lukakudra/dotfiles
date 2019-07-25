@@ -18,12 +18,20 @@ set -o vi
 
 # This is so tmux can use vim with colors
 if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
+if [[ $TERM == urxvt ]]; then TERM=xterm-256color; fi
 
 # Show NTFS folders with normal colors
 LS_COLORS=$LS_COLORS:'ow=1;34:tw=1;34:' ; export LS_COLORS
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 # Disable Ctrl + s in terminal
 stty -ixon
 
 # Aliases:
  alias myscrot='scrot ~/Pictures/screenshots/%b%d::%H%M%S.png'
+
