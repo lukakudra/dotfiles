@@ -88,13 +88,13 @@ bindsym $mod+less exec pactl -- set-sink-volume 0 -10% # decrease volume by 10%
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 bindsym XF86AudioMicMute exec pactl set-source-mute 1 toggle
 
-# brightness keys (requires program light)
-bindsym XF86MonBrightnessUp exec light -A 10 # increase brightness by 10% 
-bindsym Control+Shift+greater exec light -A 10 # increase brightness by 10% 
-bindsym XF86MonBrightnessDown exec light -U 10 # decrease brightness by 10% 
-bindsym Control+less exec light -U 10 # decrease brightness by 10% 
-bindsym XF86ScreenSaver exec light -S 0 # set brightness to 0
-bindsym Shift+XF86ScreenSaver exec light -S 100 # set brightness to 100 
+# brightness keys (requires program xbacklight)
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase brightness by 10% 
+bindsym Control+Shift+greater exec xbacklight -inc 10 # increase brightness by 10% 
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease brightness by 10% 
+bindsym Control+less exec xbacklight -dec 10 # decrease brightness by 10% 
+bindsym XF86ScreenSaver exec xbacklight -set 0 # set brightness to 0
+bindsym Shift+XF86ScreenSaver exec xbacklight -set 100 # set brightness to 100 
 
 # toggle touchpad
 bindsym XF86TouchpadToggle exec toggle-touchpad
