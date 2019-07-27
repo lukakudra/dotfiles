@@ -19,7 +19,7 @@ call plug#end()
     set encoding=utf-8
     set number
     " set termguicolors
-    " colorscheme ron
+    colorscheme ron
     set background=dark
     " set clipboard=unnamedplus
     " set term=rxvt-unicode-256color
