@@ -116,15 +116,15 @@ set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
 
 " :mark mark /full/directory/path [filename]
 
-mark h ~/
-mark d ~/Documents/
-mark D ~/Downloads/
-mark t ~/Desktop/
-mark F ~/Documents/FAKS/
-mark f "~/Documents/FAKS/4. GODINA/2. SEMESTAR/"
-mark s /media/storage/
-mark t ~/.local/share/Trash/files/
-mark M /run/media/luka/
+mark h ~
+mark d ~/Documents
+mark D ~/Downloads
+mark t ~/Desktop
+mark F ~/Documents/FAKS
+mark f "~/Documents/FAKS/4. GODINA/2. SEMESTAR"
+mark s /media/storage
+mark t ~/.local/share/vifm/Trash
+mark M /run/media/luka
 mark p ~/Pictures
 mark m ~/Music
 
