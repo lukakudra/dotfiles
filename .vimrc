@@ -5,6 +5,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 " Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
+Plug 'kien/ctrlp.vim'
 " Plug 'ericbn/vim-solarized'
 " Plug 'NLKNguyen/papercolor-theme'
 Plug 'scrooloose/nerdcommenter'
@@ -39,6 +40,12 @@ call plug#end()
     set tabstop=4
     set shiftwidth=4
     set expandtab
+
+" CtrlP configuration:
+    let g:ctrlp_map = '<c-p>'
+    let g:ctrlp_cmd = 'CtrlP'
+    let g:ctrlp_working_path_mode = 'ra'
+    nnoremap <leader>t :CtrlPTag<cr>
     
 " Enable autocompletion:
     set wildmenu
@@ -82,7 +89,7 @@ call plug#end()
 " NerdTree configuration:
     nmap <F6> :NERDTreeToggle<CR>
     let NERDTreeQuitOnOpen=1
-    map <leader>r :NERDTreeFind<cr>
+    map <leader>f :NERDTreeFind<cr>
 
 " NerdCommenter config
     " Add spaces after comment delimiters by default
