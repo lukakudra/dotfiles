@@ -29,6 +29,9 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
+# Support for 256-color gruvbox pallete
+source "$HOME/.vim/plugged//gruvbox/gruvbox_256palette.sh"
+
 # Disable Ctrl + s in terminal
 stty -ixon
 

@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 " Plug 'chriskempson/base16-vim'
-" Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 " Plug 'ericbn/vim-solarized'
 " Plug 'NLKNguyen/papercolor-theme'
 Plug 'scrooloose/nerdcommenter'
@@ -19,7 +19,7 @@ call plug#end()
     set encoding=utf-8
     set number
     " set termguicolors
-    colorscheme ron
+    colorscheme gruvbox
     set background=dark
     " set clipboard=unnamedplus
     " set term=rxvt-unicode-256color
