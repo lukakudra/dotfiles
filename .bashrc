@@ -39,6 +39,13 @@ stty -ixon
 source /usr/share/fzf/key-bindings.bash
 source /usr/share/fzf/completion.bash
 
+# Unlimited bash history
+export HISTFILESIZE=
+export HISTSIZE=
+export HISTTIMEFORMAT="[%F %T] "
+export HISTFILE=~/.bash_unlimited_history
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
 # Aliases:
  alias myscrot='scrot ~/Pictures/screenshots/%b%d::%H%M%S.png'
 
