@@ -47,6 +47,10 @@ call plug#end()
     let g:ctrlp_cmd = 'CtrlP'
     let g:ctrlp_working_path_mode = 'ra'
     nnoremap <leader>t :CtrlPTag<cr>
+
+" Fugitive configuraion
+    set diffopt+=vertical
+    nnoremap <leader>d :Gdiffsplit!<cr>
     
 " Enable autocompletion:
     set wildmenu
