@@ -35,6 +35,10 @@ source "$HOME/.vim/plugged//gruvbox/gruvbox_256palette.sh"
 # Disable Ctrl + s in terminal
 stty -ixon
 
+# Fzf bindings and completion
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
+
 # Aliases:
  alias myscrot='scrot ~/Pictures/screenshots/%b%d::%H%M%S.png'
 
