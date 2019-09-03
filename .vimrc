@@ -50,7 +50,7 @@ call plug#end()
 
 " Fugitive configuraion
     set diffopt+=vertical
-    nnoremap <leader>d :Gdiffsplit!<cr>
+    nnoremap <leader>m :Gdiffsplit!<cr>
     
 " Enable autocompletion:
     set wildmenu
