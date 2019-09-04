@@ -36,8 +36,13 @@ source "$HOME/.vim/plugged//gruvbox/gruvbox_256palette.sh"
 stty -ixon
 
 # Fzf bindings and completion
-source /usr/share/fzf/key-bindings.bash
-source /usr/share/fzf/completion.bash
+if [ -f /usr/share/fzf/key-bindings.bash ]; then
+    source /usr/share/fzf/key-bindings.bash
+fi
+
+if [ -f /usr/share/fzf/completion.bash ]; then
+    source /usr/share/fzf/completion.bash
+fi
 
 # Unlimited bash history
 export HISTFILESIZE=
@@ -45,6 +50,11 @@ export HISTSIZE=
 export HISTTIMEFORMAT="[%F %T] "
 export HISTFILE=~/.bash_unlimited_history
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
+# Autocomplete branch names in git
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
 
 # Aliases:
  alias myscrot='scrot ~/Pictures/screenshots/%b%d::%H%M%S.png'
