@@ -5,8 +5,10 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 export PATH=$PATH:$HOME/.scripts
-export PATH=$PATH:/opt/mpich/bin
 export PATH=$PATH:$HOME/.local/bin
+export GOPATH="$HOME/go"
+export GOBIN="$GOPATH/bin"
+export PATH="$PATH:$GOBIN"
 export EDITOR="vim"
 export VISUAL="vim"
 export TERMINAL="urxvt"
