@@ -7,18 +7,21 @@
 
 alias ls='ls --color=auto'
 
-# two lines prompt with exit code check
-#PS1="\[\033[0;37m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[1;31m\]\342\234\227\[\033[0;37m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[1;31m\]\u\[\033[1;37m\]@\[\033[1;33m\]\h'; else echo '\[\033[1;32m\]\u\[\033[1;37m\]@\[\033[1;33m\]\h'; fi)\[\033[0;37m\]]\342\224\200[\[\033[1;96m\]\w\[\033[0;37m\]]\n└───▶ "
+gb() {
+    echo -n '(' && git branch 2>/dev/null | grep '^*' | colrm 1 2 | tr -d '\n' && echo  -n ')'
+}
+git_branch() {
+    gb | sed 's/()//'
+}
 
-# one line prompt without exit code check
-PS1="\[\033[0;37m\]\$(echo \"[\")$(if [[ ${EUID} == 0 ]]; then echo '\[\033[1;31m\]\u\[\033[1;37m\]@\[\033[1;33m\]\h\[\033[0;37m\]]\342\224\200[\[\033[1;96m\]\w\[\033[0;37m\]]\[\033[1;37m\]#\[\033[0;37m\] '; else echo '\[\033[1;32m\]\u\[\033[1;37m\]@\[\033[1;33m\]\h\[\033[0;37m\]]\342\224\200[\[\033[1;96m\]\w\[\033[0;37m\]]\[\033[1;37m\]$\[\033[0;37m\] '; fi)"
+git_separator() {
+    [ -z $(git_branch) ] && echo "" || echo "-"
+}
+
+PS1="\[\033[1;35m\]\$(git_branch)\[\033[0;37m\]\$(git_separator)\[\033[0;37m\]\$(echo \"[\")$(if [[ ${EUID} == 0 ]]; then echo '\[\033[1;31m\]\u\[\033[1;37m\]@\[\033[1;33m\]\h\[\033[0;37m\]]-[\[\033[1;96m\]\W\[\033[0;37m\]]\[\033[1;37m\]#\[\033[0;37m\] '; else echo '\[\033[1;32m\]\u\[\033[1;37m\]@\[\033[1;33m\]\h\[\033[0;37m\]]-[\[\033[1;96m\]\W\[\033[0;37m\]]\[\033[1;37m\]$\[\033[0;37m\] '; fi)"
 
 # Set vi mode for bash
 set -o vi
-
-# This is so tmux can use vim with colors
-if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
-if [[ $TERM == urxvt ]]; then TERM=xterm-256color; fi
 
 # Show NTFS folders with normal colors
 LS_COLORS=$LS_COLORS:'ow=1;34:tw=1;34:' ; export LS_COLORS
@@ -36,13 +39,8 @@ source "$HOME/.vim/plugged//gruvbox/gruvbox_256palette.sh"
 stty -ixon
 
 # Fzf bindings and completion
-if [ -f /usr/share/fzf/key-bindings.bash ]; then
-    source /usr/share/fzf/key-bindings.bash
-fi
-
-if [ -f /usr/share/fzf/completion.bash ]; then
-    source /usr/share/fzf/completion.bash
-fi
+[ -f /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
+[ -f /usr/share/fzf/completion.bash ] && source /usr/share/fzf/completion.bash
 
 # Unlimited bash history
 export HISTFILESIZE=
@@ -50,11 +48,6 @@ export HISTSIZE=
 export HISTTIMEFORMAT="[%F %T] "
 export HISTFILE=~/.bash_unlimited_history
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
-
-# Autocomplete branch names in git
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
 
 # Aliases:
  alias myscrot='scrot ~/Pictures/screenshots/%b%d::%H%M%S.png'
