@@ -260,10 +260,6 @@ for_window [class=File-roller|Pavucontrol|Nm-connection-editor] floating enable
 bar {   
         
         font pango:Inconsolata Bold 11
-        colors {
-            # background #1d2021
-            statusline #fbf1c7
-        }
         status_command i3status
 }
 

@@ -9,10 +9,6 @@
 general {
         colors = false
         interval = 5
-        # gruvbox color scheme colors
-        color_good = '#83c07c'
-        color_degraded = '#fabd2f'
-        color_bad = '#fb4934'
 }
 
 order += "wireless _first_"
