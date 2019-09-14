@@ -101,7 +101,7 @@ bindsym XF86TouchpadToggle exec toggle-touchpad
 bindsym $mod+minus exec toggle-touchpad
 
 # exit i3 binding
-bindsym $mod+Shift+Escape exec --no-startup-id prompt "exit i3?" "i3-msg exit"
+bindsym $mod+Shift+Escape exec --no-startup-id yes-no "exit i3?" "i3-msg exit"
 
 # resize i3 windows without toggling resize mode with z-u-i-o
 bindsym $mod+Shift+z exec --no-startup-id i3resize left
