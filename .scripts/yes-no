@@ -2,7 +2,7 @@
 # A rofi -dmenu binary prompt script.
 # Gives a rofi -dmenu prompt labeled with $1 to perform command $2.
 # For example:
-# `./prompt "Do you want to shutdown?" "shutdown -h now"`
+# `./yes-no "Do you want to shutdown?" "shutdown -h now"`
 
 # Original author of this script is Luke Smith from lukesmith.xyz
 
