@@ -1,3 +1,6 @@
+# Zplugin plugin manager
+[ -f ~/.zplugin/bin/zplugin.zsh ] && source ~/.zplugin/bin/zplugin.zsh
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -22,6 +25,10 @@ stty -ixon
 
 # Enable autocompletion
 autoload -Uz compinit && compinit
+
+# Pure prompt theme with zplugin
+zplugin ice pick"async.zsh" src"pure.zsh"
+zplugin light sindresorhus/pure
 
 ## Prompt
 # autoload -Uz promptinit && promptinit
@@ -60,10 +67,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 export FZF_DEFAULT_COMMAND='rg --hidden --files'
 export FZF_CTRL_T_COMMAND='rg --hidden --files'
 
-# Zplugin plugin manager
-[ -f /usr/share/zsh/plugin-managers/zplugin/zplugin.zsh ] && source /usr/share/zsh/plugin-managers/zplugin/zplugin.zsh
-
-# Pure prompt theme with zplugin
-zplugin ice pick"async.zsh" src"pure.zsh"
-zplugin light sindresorhus/pure
+# # Pure prompt theme with zplugin
+# zplugin ice pick"async.zsh" src"pure.zsh"
+# zplugin light sindresorhus/pure
 
