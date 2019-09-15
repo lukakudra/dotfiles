@@ -23,8 +23,14 @@ source "$HOME/.vim/plugged//gruvbox/gruvbox_256palette.sh"
 # Disable Ctrl + s in terminal
 stty -ixon
 
-# Enable autocompletion
-autoload -Uz compinit && compinit
+# Load compinit every day
+autoload -Uz compinit
+
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+
+compinit -C
 
 # Pure prompt theme with zplugin
 zplugin ice pick"async.zsh" src"pure.zsh"
