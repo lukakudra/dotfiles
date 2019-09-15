@@ -67,7 +67,3 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 export FZF_DEFAULT_COMMAND='rg --hidden --files'
 export FZF_CTRL_T_COMMAND='rg --hidden --files'
 
-# # Pure prompt theme with zplugin
-# zplugin ice pick"async.zsh" src"pure.zsh"
-# zplugin light sindresorhus/pure
-
