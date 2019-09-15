@@ -48,13 +48,16 @@ call plug#end()
     let g:ctrlp_working_path_mode = 'ra'
     nnoremap <leader>t :CtrlPTag<cr>
 
-" Fugitive configuraion
+" Fugitive configuraion:
     set diffopt+=vertical
     nnoremap <leader>m :Gdiffsplit!<cr>
     
 " Enable autocompletion:
     set wildmenu
     set wildmode=longest:full,full
+
+" Fzf configuration:
+    let $FZF_DEFAULT_COMMAND = 'rg --hidden --files'
 
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
