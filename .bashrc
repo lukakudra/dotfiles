@@ -41,6 +41,8 @@ stty -ixon
 # Fzf bindings and completion
 [ -f /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
 [ -f /usr/share/fzf/completion.bash ] && source /usr/share/fzf/completion.bash
+export FZF_DEFAULT_COMMAND='rg --hidden --files'
+export FZF_CTRL_T_COMMAND='rg --hidden --files'
 
 # Unlimited bash history
 export HISTFILESIZE=
