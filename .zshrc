@@ -80,7 +80,7 @@ function normal-mode () { echo "❮" }
 precmd () {
     PS1='
 $(ssh_info)%{$fg[cyan]%}%~%u $(git_info)
-%{$fg[white]%}$(insert-mode)%(?.%{$fg[magenta]%}.%{$fg[red]%})%(!.#.$)%{$reset_color%} '
+%{$fg[white]%}$(insert-mode)%(?.%{$fg_bold[magenta]%}.%{$fg_bold[red]%})%(!.#.$)%{$reset_color%} '
 }
 
 function set-prompt () {
@@ -91,7 +91,7 @@ function set-prompt () {
     esac
     PS1='
 $(ssh_info)%{$fg[cyan]%}%~%u $(git_info)
-%{$fg[white]%}$VI_MODE%(?.%{$fg[magenta]%}.%{$fg[red]%})%(!.#.$)%{$reset_color%} '
+%{$fg[white]%}$VI_MODE%(?.%{$fg_bold[magenta]%}.%{$fg_bold[red]%})%(!.#.$)%{$reset_color%} '
 }
 
 function zle-line-init zle-keymap-select {
