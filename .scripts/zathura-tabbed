@@ -13,4 +13,5 @@ else
     wmctrl -i -r "$xid" -b add,maximized_vert,maximized_horz
     echo "$xid" > "$xidfile"
 fi
-zathura -e "$xid" "$@" &> /dev/null & 
+zathura -e "$xid" "$@" &> /dev/null &
+
