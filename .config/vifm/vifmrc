@@ -127,6 +127,7 @@ mark t ~/.local/share/vifm/Trash
 mark M /run/media/luka
 mark p ~/Pictures
 mark m ~/Music
+mark v ~/Videos
 
 " ------------------------------------------------------------------------------
 
