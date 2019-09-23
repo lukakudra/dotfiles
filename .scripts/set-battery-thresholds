@@ -1,0 +1,5 @@
+#!/bin/sh
+
+tpacpi-bat -v -s startThreshold 0 40
+tpacpi-bat -v -s stopThreshold 0 80
+

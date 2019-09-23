@@ -7,7 +7,7 @@ export DISPLAY=:0
 
 status=$(cat /sys/class/power_supply/BAT0/status)
 charging="Charging"
-critical=15
+critical=20
 capacity=$(cat /sys/class/power_supply/BAT0/capacity)
 
 if [ $status = $charging ]; then
