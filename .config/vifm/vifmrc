@@ -499,7 +499,7 @@ command! zip if [ -n "%a" ]; then
            \ fi
 
 " Extract files in current directory
-command! extract :execute '!%%n extract %f'
+command! extract unzip %f
 
 " Drag and drop
 command! drag dragon-drag-and-drop -a -x %f
