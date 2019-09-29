@@ -120,7 +120,7 @@ mark h ~
 mark d ~/Documents
 mark D ~/Downloads
 mark F ~/Documents/FAKS
-mark f "~/Documents/FAKS/4. GODINA/2. SEMESTAR"
+mark f "~/Documents/FAKS/5. GODINA/3. SEMESTAR"
 mark s /media/storage
 mark t ~/.local/share/vifm/Trash
 mark M /run/media/luka
