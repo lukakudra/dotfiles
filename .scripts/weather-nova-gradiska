@@ -4,6 +4,6 @@
 report=$(curl wttr.in/nova_gradiska)
 
 # Echo the variable report and
-# exec bash to stop terminal from closing
+# exec zsh to stop terminal from closing
 echo "$report"
-exec bash
+exec zsh
