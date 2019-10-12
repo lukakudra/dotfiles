@@ -3,15 +3,13 @@ let mapleader = " "
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
-" Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
-" Plug 'ericbn/vim-solarized'
-" Plug 'NLKNguyen/papercolor-theme'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
+Plug 'romainl/vim-cool'
 call plug#end()
 
 " Some basics:
@@ -26,12 +24,7 @@ call plug#end()
     " set clipboard=unnamedplus
     " set term=rxvt-unicode-256color
     " set term=xterm-256color
-
-" Set colorscheme to match the one from the shell
-    " if filereadable(expand("~/.vimrc_background"))
-     " let base16colorspace=256
-      " source ~/.vimrc_background
-    " endif
+    source $VIMRUNTIME/vimrc_example.vim
 
 " Mouse support:
     set mouse=a
@@ -97,7 +90,7 @@ call plug#end()
 " NerdTree configuration:
     nmap <F6> :NERDTreeToggle<CR>
     let NERDTreeQuitOnOpen=1
-    map <leader>f :NERDTreeFind<cr>
+    nmap <leader>f :NERDTreeFind<CR>
 
 " NerdCommenter config
     " Add spaces after comment delimiters by default
