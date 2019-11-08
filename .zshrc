@@ -73,6 +73,11 @@ git_info() {
 
 }
 
+# Show virtual environment if in one
+function virtualenv_info {
+ [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
+}
+
 # Show vi-mode info on the right side of the prompt
 function insert-mode () { echo "❯" }
 function normal-mode () { echo "❮" }
@@ -90,7 +95,7 @@ function set-prompt () {
       (*)          VI_MODE="$(insert-mode)" ;;
     esac
     PS1='
-$(ssh_info)%{$fg[cyan]%}%~%u $(git_info)
+$(ssh_info)%{$fg[blue]%}$(virtualenv_info)%{$reset_color%}%{$fg[cyan]%}%~%u $(git_info)
 %{$fg[white]%}$VI_MODE%(?.%{$fg_bold[magenta]%}.%{$fg_bold[red]%})%(!.#.$)%{$reset_color%} '
 }
 
