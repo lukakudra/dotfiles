@@ -32,10 +32,13 @@ floating_modifier $mod
 
 # autostart applications
 exec --no-startup-id hsetroot -fill ~/Pictures/wallpapers/nordic.png
-# exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id toggle-touchpad
 exec --no-startup-id greenclip daemon
 exec --no-startup-id /usr/bin/dunst
+# the following lines disable screen turning off
+exec --no-startup-id xset s off
+exec --no-startup-id xset -dpms
+exec --no-startup-id xset s noblank
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id $term
