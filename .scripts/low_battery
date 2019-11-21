@@ -1,9 +1,9 @@
 #!/bin/sh
 
-# Notify me with notify-send if my battery is below 20%
+# Notify me with notify-send if my battery is below 15%
 # This is meant to be run via cron
 
 [ "$(cat /sys/class/power_supply/BAT0/status)" = "Charging" ] && exit
-[ "$(cat /sys/class/power_supply/BAT0/capacity)" -lt 20 ] &&
+[ "$(cat /sys/class/power_supply/BAT0/capacity)" -lt 15 ] &&
 export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus &&
 notify-send -u critical "Battery critically low"
