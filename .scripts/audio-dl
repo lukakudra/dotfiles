@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# need to surroud the url with quotation marks when calling this script
+youtube-dl -i --extract-audio --audio-format mp3 --audio-quality 0 "$1"
