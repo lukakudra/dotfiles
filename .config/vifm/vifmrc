@@ -493,17 +493,6 @@ nnoremap <C-M-d> :!dragon-drag-and-drop -a -x %f<cr>
 
 " MY CUSTOM COMMANDS
 
-" Zip selected files
-command! zip if [ -n "%a" ]; then
-           \     zip -r '%a.zip' %f;
-           \ fi
-
-" Extract files in current directory
-command! extract unzip %f
-
-" Extract files to the directory named after the zip file
-command! extractto unzip-wrapper %f
-
 " Drag and drop
 command! drag dragon-drag-and-drop -a -x %f
 
