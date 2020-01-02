@@ -4,7 +4,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'morhetz/gruvbox'
-Plug 'kien/ctrlp.vim'
+Plug '/usr/bin/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
@@ -35,12 +36,6 @@ call plug#end()
     set shiftwidth=4
     set expandtab
 
-" CtrlP configuration:
-    let g:ctrlp_map = '<c-p>'
-    let g:ctrlp_cmd = 'CtrlP'
-    let g:ctrlp_working_path_mode = 'ra'
-    nnoremap <leader>t :CtrlPTag<cr>
-
 " Fugitive configuraion:
     set diffopt+=vertical
     nnoremap <leader>m :Gdiffsplit!<cr>
@@ -51,6 +46,8 @@ call plug#end()
 
 " Fzf configuration:
     let $FZF_DEFAULT_COMMAND = 'rg --hidden --files'
+    nnoremap <C-p> :Files<cr>
+    nnoremap <leader>t :Tags<cr>
 
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -229,5 +226,4 @@ call plug#end()
 """.xml
 	autocmd FileType xml inoremap ;e <item><Enter><title><++></title><Enter><guid<space>isPermaLink="false"><++></guid><Enter><pubDate><Esc>:put<Space>=strftime('%a, %d %b %Y %H:%M:%S %z')<Enter>kJA</pubDate><Enter><link><++></link><Enter><description><![CDATA[<++>]]></description><Enter></item><Esc>?<title><enter>cit
 	autocmd FileType xml inoremap ;a <a href="<++>"><++></a><++><Esc>F"ci"
-
 

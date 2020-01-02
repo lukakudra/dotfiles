@@ -173,3 +173,33 @@ bindkey '^e' edit-command-line
 export FZF_DEFAULT_COMMAND='rg --hidden --files'
 export FZF_CTRL_T_COMMAND='rg --hidden --files'
 
+# nodejs
+export NVM_DIR="$HOME/.nvm"
+node_aliases=(
+node
+npm
+yarn
+)
+nvm () {
+  orig=$1
+  if [ -z "$orig" ] ; then
+    orig='nvm'
+  else
+    shift
+  fi
+
+  >&2 echo "Loading nvm for the first time..."
+  if [ -s "$NVM_DIR/nvm.sh" ] ; then
+    unset -f nvm
+    for a in $node_aliases ; do
+      unalias $a 2> /dev/null
+    done
+    \source "$NVM_DIR/nvm.sh" # This loads nvm
+    echo "Running '$orig $*'"
+    $orig $*
+  fi
+}
+
+for a in $node_aliases ; do
+  alias $a="nvm $a"
+done
