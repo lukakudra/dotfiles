@@ -110,16 +110,6 @@ zle -N zle-keymap-select
 # Show NTFS folders with normal colors
 LS_COLORS=$LS_COLORS:'ow=1;34:tw=1;34:' ; export LS_COLORS
 
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
-
-
-# Support for 256-color gruvbox pallete
-source "$HOME/.vim/plugged//gruvbox/gruvbox_256palette.sh"
-
 # Disable Ctrl + s in terminal
 stty -ixon
 
@@ -161,6 +151,12 @@ bindkey -M menuselect '^j' vi-down-line-or-history
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
+# Show dynamic terminal title
+case "$TERM" in
+    vte*|xterm*|rxvt*)
+        precmd() { print -Pn '\e];%n (%~) - Terminal\a' } ;;
+esac
+
 # Syntax higlighting
 [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -173,33 +169,46 @@ bindkey '^e' edit-command-line
 export FZF_DEFAULT_COMMAND='rg --hidden --files'
 export FZF_CTRL_T_COMMAND='rg --hidden --files'
 
-# nodejs
-export NVM_DIR="$HOME/.nvm"
-node_aliases=(
-node
-npm
-yarn
-)
-nvm () {
-  orig=$1
-  if [ -z "$orig" ] ; then
-    orig='nvm'
-  else
-    shift
-  fi
+# Go path
+export GOPATH="$HOME/go"
+export GOBIN="$GOPATH/bin"
+export PATH="$PATH:$GOBIN"
 
-  >&2 echo "Loading nvm for the first time..."
-  if [ -s "$NVM_DIR/nvm.sh" ] ; then
-    unset -f nvm
-    for a in $node_aliases ; do
-      unalias $a 2> /dev/null
-    done
-    \source "$NVM_DIR/nvm.sh" # This loads nvm
-    echo "Running '$orig $*'"
-    $orig $*
-  fi
-}
+# # Nodejs with nvm
+# export NVM_DIR="$HOME/.nvm"
+# node_aliases=(
+# node
+# npm
+# yarn
+# )
+# nvm () {
+  # orig=$1
+  # if [ -z "$orig" ] ; then
+    # orig='nvm'
+  # else
+    # shift
+  # fi
 
-for a in $node_aliases ; do
-  alias $a="nvm $a"
-done
+  # >&2 echo "Loading nvm for the first time..."
+  # if [ -s "$NVM_DIR/nvm.sh" ] ; then
+    # unset -f nvm
+    # for a in $node_aliases ; do
+      # unalias $a 2> /dev/null
+    # done
+    # \source "$NVM_DIR/nvm.sh" # This loads nvm
+    # echo "Running '$orig $*'"
+    # $orig $*
+  # fi
+# }
+
+# for a in $node_aliases ; do
+  # alias $a="nvm $a"
+# done
+
+# Aliases
+alias v=nvim
+alias vim=nvim
+alias f=vifm
+alias m=music
+alias p=playlist
+

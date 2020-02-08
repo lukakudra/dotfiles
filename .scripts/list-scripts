@@ -1,0 +1,4 @@
+#!/bin/sh
+
+find ~/.scripts -type f | sed 's/^\.\///g' | sort | fzf | xargs -d '\n' -r $EDITOR
+

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# this scripts is used when starting neovim from i3
+sleep 0.1
+nvim $@

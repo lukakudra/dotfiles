@@ -1,0 +1,4 @@
+#!/bin/sh
+
+find ~/Music -iname '*.mp3' -o -iname '*.ogg' -o -iname '*.flac' -o -iname '*.wmv' -type f | sed 's/^\.\///g' | sort | fzf | xargs -d '\n' -r mpv
+

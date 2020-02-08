@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# this script is used when starting vifm from i3
+sleep 0.1
+vifm $@
