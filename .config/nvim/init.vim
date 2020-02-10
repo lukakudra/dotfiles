@@ -39,6 +39,10 @@ set termguicolors
 colorscheme gruvbox
 set background=dark
 
+set noundofile
+set noswapfile
+set nobackup
+
 set mouse=a
 
 set tabstop=4
@@ -147,7 +151,6 @@ let g:coc_global_extensions = [
 set hidden
 
 " Some servers have issues with backup files, see #649
-set nobackup
 set nowritebackup
 
 " Better display for messages
