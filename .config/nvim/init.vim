@@ -56,7 +56,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set splitbelow splitright
 
 " fix tmux background color
-set t_Co=256
+" set t_Co=256
 
 " Navigating with guides
 " inoremap <leader><leader> <Esc>/<Enter>"_c4l
