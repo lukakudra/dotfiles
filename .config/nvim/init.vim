@@ -68,11 +68,11 @@ set splitbelow splitright
 " map <leader><leader> <Esc>/<++><Enter>"_c4l
 
 " Surround selected text in visual mode with characters that come in pairs
-vnoremap ;( <ESC><ESC>`<i(<ESC>`>2la)<ESC>
-vnoremap ;" <ESC><ESC>`<i"<ESC>`>2la"<ESC>
-vnoremap ;' <ESC><ESC>`<i'<ESC>`>2la'<ESC>
-vnoremap ;[ <ESC><ESC>`<i[<ESC>`>2la]<ESC>
-vnoremap ;{ <ESC><ESC>`<i{<ESC>`>2la}<ESC>
+vnoremap ;( <ESC><ESC>`<i(<ESC>`>2li)<ESC>
+vnoremap ;" <ESC><ESC>`<i"<ESC>`>2li"<ESC>
+vnoremap ;' <ESC><ESC>`<i'<ESC>`>2li'<ESC>
+vnoremap ;[ <ESC><ESC>`<i[<ESC>`>2li]<ESC>
+vnoremap ;{ <ESC><ESC>`<i{<ESC>`>2li}<ESC>
 
 " Copy to system clipboard
 " * uses PRIMARY
