@@ -12,6 +12,7 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'junegunn/goyo.vim'
     Plug 'itchyny/lightline.vim'
     Plug 'lervag/vimtex'
+    Plug 'rhysd/vim-clang-format'
     Plug 'morhetz/gruvbox'
 call plug#end()
 
@@ -127,6 +128,12 @@ let g:NERDTrimTrailingWhitespace = 1
 " Lightline
 set noshowmode
 let g:lightline = {'colorscheme' : 'gruvbox'}
+
+" Clang-format
+
+let g:clang_format#detect_style_file = 1
+let g:clang_format#code_style = 'llvm'
+let g:clang_format#auto_format = 1
 
 " SNIPPETS:
 " TO DO
