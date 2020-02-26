@@ -1,0 +1,3 @@
+These settings should be placed like this:
+* ~/.config/<vs_code_directory>/User/settings.json
+* ~/.config/<vs_code_directory>/User/keybindings.json

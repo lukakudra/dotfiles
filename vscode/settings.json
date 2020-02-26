@@ -1,0 +1,59 @@
+{
+    "editor.fontFamily": "'Inconsolata', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "keyboard.dispatch": "keyCode",
+    "workbench.colorTheme": "Gruvbox Dark (Medium)",
+    "window.menuBarVisibility": "toggle",
+    "editor.fontSize": 14,
+    "git.enabled": false,
+    "window.zoomLevel": 0,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.activityBar.visible": true,
+    "workbench.list.openMode": "doubleClick",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.tabSizing": "shrink",
+    "editor.minimap.enabled": false,
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.formatOnSave": true,
+    "breadcrumbs.enabled": false,
+    "json.format.enable": false,
+    "editor.renderIndentGuides": false,
+    "editor.quickSuggestions": false,
+    "files.trimTrailingWhitespace": true,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "scm.diffDecorations": "all",
+    "git.confirmSync": false,
+    "terminal.external.linuxExec": "termite",
+    "vim.handleKeys": {
+        "<C-o>": false,
+        "<C-i>": false
+    },
+    "C_Cpp.intelliSenseEngine": "Disabled",
+    "C_Cpp.errorSquiggles": "Disabled",
+    "clangd.arguments": [
+        "-background-index",
+        "-compile-commands-dir=build/"
+    ],
+    "vsicons.dontShowNewVersionMessage": true,
+    "clangd.semanticHighlighting": false,
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "[go]": {
+        "editor.snippetSuggestions": "none",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        }
+    },
+    "gopls": {
+        "usePlaceholders": true, // add parameter placeholders when completing a function
+        // Experimental settings
+        "completeUnimported": true, // autocomplete unimported packages
+        "deepCompletion": true, // enable deep completion
+    },
+    "latex-workshop.view.pdf.viewer": "external",
+    "latex-workshop.view.pdf.external.viewer.command": "zathura",
+    "latex-workshop.view.pdf.ref.viewer": "external",
+    "latex-workshop.latex.autoBuild.run": "never",
+}
