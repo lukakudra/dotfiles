@@ -36,26 +36,6 @@
         "when": "searchViewletVisible"
     },
     {
-        "key": "shift+k",
-        "command": "editor.action.showHover",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+k ctrl+i",
-        "command": "-editor.action.showHover",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "shift+k",
-        "command": "editor.debug.action.showDebugHover",
-        "when": "editorTextFocus && inDebugMode"
-    },
-    {
-        "key": "ctrl+k ctrl+i",
-        "command": "-editor.debug.action.showDebugHover",
-        "when": "editorTextFocus && inDebugMode"
-    },
-    {
         "key": "ctrl+shift+k ctrl+shift+o",
         "command": "workbench.action.files.openFolder"
     },
