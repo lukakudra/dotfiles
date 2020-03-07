@@ -25,9 +25,13 @@
     "scm.diffDecorations": "all",
     "git.confirmSync": false,
     "terminal.external.linuxExec": "termite",
+    "vim.useCtrlKeys": true,
     "vim.handleKeys": {
         "<C-o>": false,
-        "<C-i>": false
+        "<C-i>": false,
+        "<C-f>": false,
+        "<C-g>": false,
+        "<C-h>": false
     },
     "C_Cpp.intelliSenseEngine": "Disabled",
     "C_Cpp.errorSquiggles": "Disabled",
