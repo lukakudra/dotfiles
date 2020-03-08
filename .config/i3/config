@@ -37,6 +37,7 @@ exec --no-startup-id greenclip daemon
 exec --no-startup-id /usr/bin/dunst
 exec --no-startup-id picom -b
 exec --no-startup-id flameshot
+exec --no-startup-id remap-keys
 # the following lines disable screen turning off
 exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms
