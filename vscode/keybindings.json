@@ -158,5 +158,10 @@
     {
         "key": "ctrl+k f",
         "command": "-workbench.action.closeFolder"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
     }
 ]
