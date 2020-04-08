@@ -37,6 +37,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" Change comment style for c-like languages
+autocmd FileType c,cpp,cs,java set commentstring=//\ %s
+
 " Fugitive configuraion:
 set diffopt+=vertical
 nnoremap <leader>m :Gdiffsplit!<cr>
@@ -105,6 +108,8 @@ nmap <leader>f :NERDTreeFind<CR>
 let g:NERDSpaceDelims = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
+" Change default delimiters for C
+let g:NERDAltDelims_c = 1
 
 " Navigating with guides
 "inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
