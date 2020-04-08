@@ -37,9 +37,6 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" Change comment style for c-like languages
-autocmd FileType c,cpp,cs,java set commentstring=//\ %s
-
 " Fugitive configuraion:
 set diffopt+=vertical
 nnoremap <leader>m :Gdiffsplit!<cr>
