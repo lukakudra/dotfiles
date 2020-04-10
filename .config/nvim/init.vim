@@ -124,13 +124,14 @@ nmap <leader>v :NERDTreeFind<CR>
 let g:NERDSpaceDelims = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
+" Change default delimiters for C
+let g:NERDAltDelims_c = 1
 
 " Lightline
 set noshowmode
 let g:lightline = {'colorscheme' : 'gruvbox'}
 
 " Clang-format
-
 let g:clang_format#detect_style_file = 1
 let g:clang_format#code_style = 'llvm'
 let g:clang_format#auto_format = 1

@@ -105,6 +105,8 @@ nmap <leader>f :NERDTreeFind<CR>
 let g:NERDSpaceDelims = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
+" Change default delimiters for C
+let g:NERDAltDelims_c = 1
 
 " Navigating with guides
 "inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
