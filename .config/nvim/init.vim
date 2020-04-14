@@ -115,9 +115,15 @@ let g:vimtex_view_method = 'zathura'
 map <leader>g :Goyo \| set linebreak<CR>
 
 " NerdTree configuration:
-nmap <F6> :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen=1
+nmap <C-M-b> :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen=0
 nmap <leader>v :NERDTreeFind<CR>
+" autocmd BufWinEnter * NERDTreeMirror
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let g:NERDTreeWinSize=60
 
 " NerdCommenter config
 " Add spaces after comment delimiters by default
