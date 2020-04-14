@@ -96,7 +96,7 @@ set diffopt+=vertical
 nnoremap <leader>d :Gdiffsplit!<cr>
 
 " Fzf configuration
-let $FZF_DEFAULT_COMMAND = 'rg --hidden --files'
+let $FZF_DEFAULT_COMMAND = 'rg --hidden --files --no-ignore-vcs'
 nnoremap <leader>, :Files<cr>
 nnoremap <leader>t :Tags<cr>
 
