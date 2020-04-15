@@ -78,10 +78,13 @@ vnoremap ;{ <ESC><ESC>`<i{<ESC>`>2li}<ESC>
 " Copy to system clipboard
 " * uses PRIMARY
 " + usese CLIPBOARD
-noremap <Leader>y "+y
-noremap <Leader>p "+p
-noremap <Leader>Y "*y
-noremap <Leader>P "*p
+noremap <leader>y "+y
+noremap <leader>p "+p
+noremap <leader>Y "*y
+noremap <leader>P "*p
+
+" Search whole word
+nnoremap <leader>/ /\<\><left<left
 
 " Remember position in file
 autocmd BufReadPost *
