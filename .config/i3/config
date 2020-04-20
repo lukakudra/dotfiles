@@ -31,7 +31,7 @@ font pango:Inconsolata 10
 floating_modifier $mod
 
 # autostart applications
-exec --no-startup-id hsetroot -fill ~/Pictures/wallpapers/nordic.png
+exec --no-startup-id hsetroot -fill ~/.config/wallpaper.png
 exec --no-startup-id toggle-touchpad
 exec --no-startup-id greenclip daemon
 exec --no-startup-id /usr/bin/dunst
