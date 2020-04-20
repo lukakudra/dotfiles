@@ -67,7 +67,7 @@ set splitbelow splitright
 " Navigating with guides
 " inoremap <leader><leader> <Esc>/<Enter>"_c4l
 " vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-" map <leader><leader> <Esc>/<++><Enter>"_c4l
+map <leader><space> <Esc>/<++><Enter>"_c4l
 
 " Surround selected text in visual mode with characters that come in pairs
 vnoremap ;( <ESC><ESC>`<i(<ESC>`>2li)<ESC>
@@ -308,4 +308,49 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+" Code snippets
+
+" Latex
+" Word count
+autocmd FileType tex map <leader>w :w !detex \| wc -w<CR>
+" Code snippets
+autocmd FileType tex inoremap ;fr \begin{frame}<Enter>\frametitle{}<Enter><Enter><++><Enter><Enter>\end{frame}<Enter><Enter><++><Esc>6kf}i
+autocmd FileType tex inoremap ;em \emph{}<++><Esc>T{i
+autocmd FileType tex inoremap ;bf \textbf{}<++><Esc>T{i
+autocmd FileType tex inoremap ;it \textit{}<++><Esc>T{i
+autocmd FileType tex inoremap ;ci \cite{}<++><Esc>T{i
+autocmd FileType tex inoremap ;fo \footnote{}<++><Esc>T{i
+autocmd FileType tex inoremap ;xl \begin{xlist}<Enter>\ex<Space><Enter>\end{xlist}<Esc>kA<Space>
+autocmd FileType tex inoremap ;ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter><++><Esc>3kA\item<Space>
+autocmd FileType tex inoremap ;ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter><++><Esc>3kA\item<Space>
+autocmd FileType tex inoremap ;li <Enter>\item<Space>
+autocmd FileType tex inoremap ;re \ref{}<Space><++><Esc>T{i
+autocmd FileType tex inoremap ;ta \begin{tabular}<Enter><++><Enter>\end{tabular}<Enter><Enter><++><Esc>4kA{}<Esc>i
+autocmd FileType tex inoremap ;ot \begin{tableau}<Enter>\inp{<++>}<Tab>\const{<++>}<Tab><++><Enter><++><Enter>\end{tableau}<Enter><Enter><++><Esc>5kA{}<Esc>i
+autocmd FileType tex inoremap ;ah \href{}{<++>}<Space><++><Esc>2T{i
+autocmd FileType tex inoremap ;ch \chapter{}<Enter><Enter><++><Esc>2kf}i
+autocmd FileType tex inoremap ;sec \section{}<Enter><Enter><++><Esc>2kf}i
+autocmd FileType tex inoremap ;ssec \subsection{}<Enter><Enter><++><Esc>2kf}i
+autocmd FileType tex inoremap ;sssec \subsubsection{}<Enter><Enter><++><Esc>2kf}i
+autocmd FileType tex inoremap ;up <Esc>/usepackage<Enter>o\usepackage{}<Esc>i
+autocmd FileType tex nnoremap ;up /usepackage<Enter>o\usepackage{}<Esc>i
+autocmd FileType tex inoremap ;co \begin{columns}[T]<Enter>\begin{column}{.5\textwidth}<Enter><Enter>\end{column}<Enter>\begin{column}{.5\textwidth}<Enter><++><Enter>\end{column}<Enter>\end{columns}<Esc>5kA
+" .bib
+autocmd FileType bib inoremap ;a @article{<Enter>author<Space>=<Space>{<++>},<Enter>year<Space>=<Space>{<++>},<Enter>title<Space>=<Space>{<++>},<Enter>journal<Space>=<Space>{<++>},<Enter>volume<Space>=<Space>{<++>},<Enter>pages<Space>=<Space>{<++>},<Enter>}<Enter><++><Esc>8kA,<Esc>i
+autocmd FileType bib inoremap ;b @book{<Enter>author<Space>=<Space>{<++>},<Enter>year<Space>=<Space>{<++>},<Enter>title<Space>=<Space>{<++>},<Enter>publisher<Space>=<Space>{<++>},<Enter>}<Enter><++><Esc>6kA,<Esc>i
+autocmd FileType bib inoremap ;c @incollection{<Enter>author<Space>=<Space>{<++>},<Enter>title<Space>=<Space>{<++>},<Enter>booktitle<Space>=<Space>{<++>},<Enter>editor<Space>=<Space>{<++>},<Enter>year<Space>=<Space>{<++>},<Enter>publisher<Space>=<Space>{<++>},<Enter>}<Enter><++><Esc>8kA,<Esc>i
+
+" Markdown
+" Word count
+autocmd Filetype markdown,rmd map <leader>w yiWi[<esc>Ea](<esc>pa)
+" Code snippets
+autocmd Filetype markdown,rmd inoremap ;bf ****<++><Esc>F*hi
+autocmd Filetype markdown,rmd inoremap ;st ~~~~<++><Esc>F~hi
+autocmd Filetype markdown,rmd inoremap ;em **<++><Esc>F*i
+autocmd Filetype markdown,rmd inoremap ;im ![](<++>)<++><Esc>F[a
+autocmd Filetype markdown,rmd inoremap ;ah [](<++>)<++><Esc>F[a
+autocmd Filetype markdown,rmd inoremap ;sec #<Space><Enter><++><Esc>kA
+autocmd Filetype markdown,rmd inoremap ;ssec ##<Space><Enter><++><Esc>kA
+autocmd Filetype markdown,rmd inoremap ;sssec ###<Space><Enter><++><Esc>kA
 
