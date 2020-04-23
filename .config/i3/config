@@ -71,6 +71,7 @@ bindsym $mod+Shift+Return exec --no-startup-id samedir
 bindsym $mod+i exec --no-startup-id firefox
 bindsym $mod+e exec --no-startup-id $term -e dvifm
 bindsym $mod+p exec --no-startup-id thunderbird
+bindsym $mod+Shift+x exec --no-startup-id i3lock --color=000000
 bindsym $mod+v exec --no-startup-id $term -e dnvim
 bindsym $mod+m exec --no-startup-id $term -e mocp
 bindsym Print --release exec --no-startup-id flameshot gui -p ~/Pictures/screenshots
