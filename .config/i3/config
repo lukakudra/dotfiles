@@ -80,7 +80,7 @@ bindsym Shift+Print --release exec --no-startup-id flameshot full -c -p ~/Pictur
 # bindsym Shift+Print --release exec --no-startup-id print-screen-to-file
 bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' # uses greenclip and rofi to show a clipboard
 bindsym $mod+u exec --no-startup-id rofi-emoji
-bindsym $mod+Shift+w exec --no-startup-id rofi -show window
+bindsym $mod+Shift+e exec --no-startup-id rofi -show window
 bindsym $mod+Shift+d exec --no-startup-id displayselect
 bindsym $mod+comma exec --no-startup-id $term -e weather-nova-gradiska
 bindsym $mod+period exec --no-startup-id $term -e weather-zagreb
@@ -88,7 +88,7 @@ bindsym $mod+period exec --no-startup-id $term -e weather-zagreb
 
 # volume keys
 bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ +10% # increase volume by 10%
-bindsym $mod+Shift+greater exec  pactl -- set-sink-volume @DEFAULT_SINK@ +10% # increase volume by 10%
+bindsym $Control+less exec  pactl -- set-sink-volume @DEFAULT_SINK@ +10% # increase volume by 10%
 bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ -10% # decrease volume by 10%
 bindsym $mod+less exec pactl -- set-sink-volume @DEFAULT_SINK@ -10% # decrease volume by 10%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
@@ -96,9 +96,7 @@ bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle # to
 
 # brightness keys (requires program light)
 bindsym XF86MonBrightnessUp exec light -A 10 # increase brightness by 10%
-bindsym Control+Shift+greater exec light -A 10 # increase brightness by 10%
 bindsym XF86MonBrightnessDown exec light -U 10 # decrease brightness by 10%
-bindsym Control+less exec light -U 10 # decrease brightness by 10%
 bindsym XF86ScreenSaver exec light -S 0 # set brightness to 0
 bindsym Shift+XF86ScreenSaver exec light -S 100 # set brightness to 100
 
@@ -108,12 +106,6 @@ bindsym $mod+minus exec toggle-touchpad
 
 # exit i3 binding
 bindsym $mod+Shift+Escape exec --no-startup-id yes-no "exit i3?" "i3-msg exit"
-
-# resize i3 windows without toggling resize mode with z-u-i-o
-bindsym $mod+Shift+z exec --no-startup-id i3resize left
-bindsym $mod+Shift+u exec --no-startup-id i3resize down 
-bindsym $mod+Shift+i exec --no-startup-id i3resize up
-bindsym $mod+Shift+o exec --no-startup-id i3resize right
 
 # change focus
 bindsym $mod+h focus left
