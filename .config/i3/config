@@ -88,7 +88,7 @@ bindsym $mod+period exec --no-startup-id $term -e weather-zagreb
 
 # volume keys
 bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ +10% # increase volume by 10%
-bindsym $Control+less exec  pactl -- set-sink-volume @DEFAULT_SINK@ +10% # increase volume by 10%
+bindsym Control+less exec  pactl -- set-sink-volume @DEFAULT_SINK@ +10% # increase volume by 10%
 bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ -10% # decrease volume by 10%
 bindsym $mod+less exec pactl -- set-sink-volume @DEFAULT_SINK@ -10% # decrease volume by 10%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
