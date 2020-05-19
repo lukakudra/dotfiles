@@ -223,6 +223,12 @@ let g:NERDAltDelims_c = 1
 " Lightline
 set noshowmode
 let g:lightline = {'colorscheme' : 'gruvbox'}
+command! LightlineReload call LightlineReload()
+function! LightlineReload()
+  call lightline#init()
+  call lightline#colorscheme()
+  call lightline#update()
+endfunction
 
 " Clang-format
 let g:clang_format#detect_style_file = 1
