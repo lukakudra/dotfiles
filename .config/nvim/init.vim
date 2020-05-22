@@ -12,7 +12,6 @@ call plug#begin(stdpath('data') . '/plugged')
 	Plug 'scrooloose/nerdtree'
 	Plug 'vim-scripts/auto-pairs-gentle'
     Plug 'junegunn/goyo.vim'
-    " Plug 'itchyny/lightline.vim'
     Plug 'vim-airline/vim-airline'
     Plug 'lervag/vimtex'
     Plug 'rhysd/vim-clang-format'
@@ -198,6 +197,7 @@ let g:AutoPairsUseInsertedCount = 1
 " Latex
 let g:tex_flavor = "latex"
 let g:vimtex_view_method = 'zathura'
+let g:tex_conceal = ''
 
 " Goyo plugin makes text more readable when writing prose:
 map <leader>n :Goyo \| set linebreak<CR>
