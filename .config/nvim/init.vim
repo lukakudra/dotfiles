@@ -12,7 +12,8 @@ call plug#begin(stdpath('data') . '/plugged')
 	Plug 'scrooloose/nerdtree'
 	Plug 'vim-scripts/auto-pairs-gentle'
     Plug 'junegunn/goyo.vim'
-    Plug 'itchyny/lightline.vim'
+    " Plug 'itchyny/lightline.vim'
+    Plug 'vim-airline/vim-airline'
     Plug 'lervag/vimtex'
     Plug 'rhysd/vim-clang-format'
     Plug 'morhetz/gruvbox'
@@ -87,7 +88,7 @@ vnoremap ;{ <ESC><ESC>`<i{<ESC>`>2li}<ESC>
 
 " Copy to system clipboard
 " * uses PRIMARY
-" + usese CLIPBOARD
+" + uses CLIPBOARD
 noremap <leader>y "+y
 noremap <leader>p "+p
 noremap <leader>Y "*y
@@ -212,6 +213,10 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let g:NERDTreeWinSize=60
 
+" Airline
+set noshowmode
+let g:airline_powerline_fonts = 1
+
 " NerdCommenter config
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
@@ -219,16 +224,6 @@ let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
 " Change default delimiters for C
 let g:NERDAltDelims_c = 1
-
-" Lightline
-set noshowmode
-let g:lightline = {'colorscheme' : 'gruvbox'}
-command! LightlineReload call LightlineReload()
-function! LightlineReload()
-  call lightline#init()
-  call lightline#colorscheme()
-  call lightline#update()
-endfunction
 
 " Clang-format
 let g:clang_format#detect_style_file = 1
