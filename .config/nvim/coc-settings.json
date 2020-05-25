@@ -1,5 +1,7 @@
 {
     "suggest.autoTrigger": "none",
+    "json.enable": true,
+    "json.format.enable": true,
     "languageserver": {
         "clangd": {
           "command": "clangd",

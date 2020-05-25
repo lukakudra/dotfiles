@@ -230,8 +230,11 @@ let g:clang_format#detect_style_file = 1
 let g:clang_format#code_style = 'llvm'
 let g:clang_format#auto_format = 1
 
-" COC CONFIG:
+" IndentLine
+autocmd Filetype json :IndentLinesDisable
 
+" COC CONFIG:
+-
 " coc extensions
 let g:coc_global_extensions = [
     \'coc-snippets',
