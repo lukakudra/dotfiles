@@ -245,6 +245,7 @@ let g:coc_global_extensions = [
     \'coc-python',
     \'coc-markdownlint',
     \'coc-go',
+    \'coc-yaml',
     \'coc-vimtex',
     \'coc-tsserver'
     \]
