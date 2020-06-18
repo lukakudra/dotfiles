@@ -17,7 +17,7 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'rhysd/vim-clang-format'
     Plug 'morhetz/gruvbox'
     Plug 'justinmk/vim-syntax-extra'
-    Plug 'Yggdroot/indentLine'
+    Plug 'jackguo380/vim-lsp-cxx-highlight'
 call plug#end()
 
 " HOWTOs:
@@ -55,6 +55,7 @@ set mouse=a
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set conceallevel=0
 
 set path+=**
 set wildmenu
@@ -230,11 +231,7 @@ let g:clang_format#detect_style_file = 1
 let g:clang_format#code_style = 'llvm'
 let g:clang_format#auto_format = 1
 
-" IndentLine
-autocmd Filetype json :IndentLinesDisable
-
 " COC CONFIG:
--
 " coc extensions
 let g:coc_global_extensions = [
     \'coc-snippets',
@@ -247,6 +244,9 @@ let g:coc_global_extensions = [
     \'coc-go',
     \'coc-yaml',
     \'coc-vimtex',
+    \'coc-clangd',
+    \'coc-cmake',
+    \'coc-vimlsp',
     \'coc-tsserver'
     \]
 

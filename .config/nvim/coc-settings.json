@@ -1,20 +1,47 @@
 {
+    "coc.preferences.formatOnSaveFiletypes": [
+        "css",
+        "markdown",
+        "javascript",
+        "html",
+        "yaml",
+        "json",
+        "python"
+    ],
     "suggest.autoTrigger": "none",
     "json.enable": true,
     "json.format.enable": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "clangd.semanticHighlighting": true,
     "languageserver": {
         "clangd": {
-          "command": "clangd",
-          "args": ["--background-index", "--compile-commands-dir=build/"],
-          "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".git/", ".hg/"],
-          "filetypes": ["c", "cpp", "objc", "objcpp"]
+            "command": "clangd",
+            "args": [
+                "--background-index",
+                "--compile-commands-dir=build/"
+            ],
+            "rootPatterns": [
+                "compile_flags.txt",
+                "compile_commands.json",
+                ".git/",
+                ".hg/"
+            ],
+            "filetypes": [
+                "c",
+                "cpp",
+                "objc",
+                "objcpp"
+            ]
         },
-
         "golang": {
-        "command": "/home/luka/go/bin/gopls",
-        "rootPatterns": ["go.mod"],
-        "filetypes": ["go"]
+            "command": "/home/luka/go/bin/gopls",
+            "rootPatterns": [
+                "go.mod"
+            ],
+            "filetypes": [
+                "go"
+            ]
         }
-
     }
 }
