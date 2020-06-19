@@ -15,9 +15,8 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'lervag/vimtex'
     Plug 'rhysd/vim-clang-format'
-    Plug 'morhetz/gruvbox'
+    Plug 'gruvbox-community/gruvbox'
     Plug 'justinmk/vim-syntax-extra'
-    Plug 'jackguo380/vim-lsp-cxx-highlight'
 call plug#end()
 
 " HOWTOs:
@@ -244,7 +243,6 @@ let g:coc_global_extensions = [
     \'coc-go',
     \'coc-yaml',
     \'coc-vimtex',
-    \'coc-clangd',
     \'coc-cmake',
     \'coc-vimlsp',
     \'coc-tsserver'

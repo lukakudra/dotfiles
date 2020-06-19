@@ -13,7 +13,6 @@
     "json.format.enable": true,
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
-    "clangd.semanticHighlighting": true,
     "languageserver": {
         "clangd": {
             "command": "clangd",
