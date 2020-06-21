@@ -60,11 +60,11 @@ bindsym $mod+d exec --no-startup-id rofi -show run
 
 
 # dropdown terminal
-exec --no-startup-id $term --name "dropdown" -e tmuxdd &
+exec --no-startup-id /usr/bin/termite -c $HOME/.config/termite/config_transparent --name "dropdown" -e tmuxdd &
 
 bindsym $mod+z [instance="dropdown"] scratchpad show, move position center
 
-for_window [instance="dropdown"] floating enable, resize set 800 600, \
+for_window [instance="dropdown"] floating enable, resize set 90ppt 90ppt, \
 move scratchpad
 
 # start frequently used programs with keyboard shortcuts
