@@ -17,6 +17,7 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'rhysd/vim-clang-format'
     Plug 'gruvbox-community/gruvbox'
     Plug 'justinmk/vim-syntax-extra'
+    Plug 'vifm/vifm.vim'
 call plug#end()
 
 " HOWTOs:
@@ -212,6 +213,10 @@ let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let g:NERDTreeWinSize=60
+
+" Vifm configuration
+nmap <leader>w :TabVifm<CR>
+nmap <leader>e :EditVifm<CR>
 
 " Airline
 set noshowmode

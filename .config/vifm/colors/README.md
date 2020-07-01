@@ -7,17 +7,21 @@ Various colorschemes for [vifm](https://vifm.info/):
 - desert
 - dracula (by EgZvor)
 - g80
+- gruvbox (by laur89)
 - iceberg (by puven12)
 - lucius (by francogonzaga)
 - matrix
 - mc-like (by Petteri Knihti)
 - molokai (by Miguel Madrid Mencía)
 - near-default
+- onedark (by mroavi)
+- palenight (by mroavi)
 - ph (by pihao)
 - reicheltd-light (by reicheltd)
 - semidarkdesert (by clausED)
 - snowwhite (by durcheinandr)
 - solarized-dark
+- solarized-light (by ayroblu)
 - zenburn
 - zenburn_1 (by frgm)
 
