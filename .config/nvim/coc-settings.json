@@ -13,26 +13,15 @@
     "json.format.enable": true,
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
+    "clangd.enabled": true,
+    "clangd.disableDiagnostics": false,
+    "clangd.disableSnippetCompletion": false,
+    "clangd.fallbackFlags": [],
+    "clangd.arguments": [
+        "--background-index",
+        "--compile-commands-dir=build/"
+    ],
     "languageserver": {
-        "clangd": {
-            "command": "clangd",
-            "args": [
-                "--background-index",
-                "--compile-commands-dir=build/"
-            ],
-            "rootPatterns": [
-                "compile_flags.txt",
-                "compile_commands.json",
-                ".git/",
-                ".hg/"
-            ],
-            "filetypes": [
-                "c",
-                "cpp",
-                "objc",
-                "objcpp"
-            ]
-        },
         "golang": {
             "command": "/home/luka/go/bin/gopls",
             "rootPatterns": [

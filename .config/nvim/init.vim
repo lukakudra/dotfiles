@@ -243,6 +243,7 @@ let g:coc_global_extensions = [
     \'coc-yaml',
     \'coc-cmake',
     \'coc-vimlsp',
+    \'coc-clangd',
     \'coc-tsserver'
     \]
 
@@ -374,6 +375,9 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+" CocCommands
+nnoremap <leader>s :CocCommand clangd.switchSourceHeader<CR>
 
 " SNIPPETS:
 
