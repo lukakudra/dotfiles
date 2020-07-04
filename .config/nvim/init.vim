@@ -228,6 +228,7 @@ let g:NERDAltDelims_c = 1
 let g:clang_format#detect_style_file = 1
 let g:clang_format#code_style = 'llvm'
 let g:clang_format#auto_format = 1
+nmap <Leader>f :ClangFormatAutoToggle<CR>
 
 " COC CONFIG:
 " coc extensions
@@ -315,8 +316,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
