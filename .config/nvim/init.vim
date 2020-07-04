@@ -13,7 +13,6 @@ call plug#begin(stdpath('data') . '/plugged')
 	Plug 'vim-scripts/auto-pairs-gentle'
     Plug 'junegunn/goyo.vim'
     Plug 'vim-airline/vim-airline'
-    Plug 'lervag/vimtex'
     Plug 'rhysd/vim-clang-format'
     Plug 'gruvbox-community/gruvbox'
     Plug 'justinmk/vim-syntax-extra'
@@ -195,11 +194,6 @@ let g:go_fmt_command = "goimports"
 " Gentle auto pairs
 let g:AutoPairsUseInsertedCount = 1
 
-" Latex
-let g:tex_flavor = "latex"
-let g:vimtex_view_method = 'zathura'
-let g:tex_conceal = ''
-
 " Goyo plugin makes text more readable when writing prose:
 map <leader>n :Goyo \| set linebreak<CR>
 
@@ -247,7 +241,6 @@ let g:coc_global_extensions = [
     \'coc-markdownlint',
     \'coc-go',
     \'coc-yaml',
-    \'coc-vimtex',
     \'coc-cmake',
     \'coc-vimlsp',
     \'coc-tsserver'

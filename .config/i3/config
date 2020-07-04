@@ -64,7 +64,7 @@ exec --no-startup-id /usr/bin/termite -c $HOME/.config/termite/config_transparen
 
 bindsym $mod+z [instance="dropdown"] scratchpad show, move position center
 
-for_window [instance="dropdown"] floating enable, resize set 90ppt 90ppt, \
+for_window [instance="dropdown"] floating enable, resize set 1300 700, \
 move scratchpad
 
 # start frequently used programs with keyboard shortcuts
