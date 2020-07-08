@@ -5,14 +5,11 @@
         "javascript",
         "html",
         "yaml",
-        "json",
-        "python"
+        "json"
     ],
     "suggest.autoTrigger": "none",
     "json.enable": true,
     "json.format.enable": true,
-    "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true,
     "clangd.enabled": true,
     "clangd.disableDiagnostics": false,
     "clangd.disableSnippetCompletion": false,
