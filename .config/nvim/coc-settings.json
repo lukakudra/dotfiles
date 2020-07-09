@@ -1,6 +1,7 @@
 {
-    "coc.preferences.formatOnSaveFiletypes": [],
+    "diagnostic.enable": true,
     "suggest.autoTrigger": "none",
+    "coc.preferences.formatOnSaveFiletypes": [],
     "json.enable": true,
     "json.format.enable": false,
     "python.linting.enabled": false,
