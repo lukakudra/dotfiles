@@ -39,6 +39,7 @@ syntax enable
 filetype plugin on
 set encoding=utf-8
 set number
+let g:gruvbox_invert_selection='0'
 set termguicolors
 colorscheme gruvbox
 set background=dark
@@ -233,7 +234,6 @@ nmap <Leader>f :ClangFormatAutoToggle<CR>
 " COC CONFIG:
 " coc extensions
 let g:coc_global_extensions = [
-    \'coc-snippets',
     \'coc-json',
     \'coc-html',
     \'coc-css',
@@ -314,6 +314,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>prn :CocSearch <C-R>=expand("<cword>")<CR><CR>
 
 " Remap for format selected region
 " xmap <leader>f  <Plug>(coc-format-selected)
