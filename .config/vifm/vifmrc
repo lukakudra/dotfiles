@@ -119,11 +119,11 @@ set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
 mark h ~
 mark d ~/Documents
 mark D ~/Downloads
-mark F ~/Documents/FAKS
-mark f "~/Documents/FAKS/5. GODINA/4. SEMESTAR"
 mark s /media/storage
 mark t ~/.local/share/vifm/Trash
-mark M /run/media/luka
+mark u /mnt/usb-stick
+mark U /mnt/external-drive
+mark S /mnt/sd-card
 mark p ~/Pictures
 mark m ~/Music
 mark v ~/Videos
