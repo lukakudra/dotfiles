@@ -58,7 +58,6 @@ bindsym $mod+d exec --no-startup-id rofi -show run
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-
 # dropdown terminal
 exec --no-startup-id /usr/bin/termite -c $HOME/.config/termite/config_transparent --name "dropdown" -e tmuxdd &
 
@@ -72,7 +71,7 @@ bindsym $mod+Shift+Return exec --no-startup-id samedir
 bindsym $mod+i exec --no-startup-id firefox
 bindsym $mod+e exec --no-startup-id $term -e dvifm
 bindsym $mod+p exec --no-startup-id thunderbird
-bindsym $mod+x exec --no-startup-id i3lock --color=000000
+bindsym $mod+x --release exec --no-startup-id slock
 bindsym $mod+v exec --no-startup-id $term -e dnvim
 bindsym $mod+m exec --no-startup-id $term -e mocp
 bindsym Print --release exec --no-startup-id flameshot gui -p ~/Pictures/screenshots
@@ -85,7 +84,6 @@ bindsym $mod+Shift+e exec --no-startup-id rofi -show window
 bindsym $mod+Shift+d exec --no-startup-id displayselect
 bindsym $mod+comma exec --no-startup-id $term -e weather-nova-gradiska
 bindsym $mod+period exec --no-startup-id $term -e weather-zagreb
-
 
 # volume keys
 bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ +10% # increase volume by 10%
