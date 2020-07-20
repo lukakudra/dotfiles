@@ -32,7 +32,7 @@ font pango:Inconsolata 10
 floating_modifier $mod
 
 # autostart applications
-exec --no-startup-id hsetroot -fill ~/.config/wallpaper.png
+exec --no-startup-id hsetroot -solid black
 exec --no-startup-id toggle-touchpad
 exec --no-startup-id greenclip daemon
 exec --no-startup-id /usr/bin/dunst
@@ -91,7 +91,7 @@ bindsym Control+less exec  pactl -- set-sink-volume @DEFAULT_SINK@ +10% # increa
 bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ -10% # decrease volume by 10%
 bindsym $mod+less exec pactl -- set-sink-volume @DEFAULT_SINK@ -10% # decrease volume by 10%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
-bindsym $mod+Shift+s exec pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+bindsym $mod+y exec pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle # toggle mic mute
 
 # brightness keys (requires program light)

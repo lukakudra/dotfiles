@@ -1,4 +1,0 @@
-#!/bin/sh
-
-hsetroot -fill $HOME/.config/wallpaper.png
-
