@@ -5,7 +5,6 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
     Plug '/usr/bin/fzf'
     Plug 'junegunn/fzf.vim'
-    Plug 'junegunn/fzf.vim'
     Plug 'airblade/vim-rooter'
 	Plug 'tpope/vim-fugitive'
 	Plug 'scrooloose/nerdcommenter'
@@ -17,6 +16,8 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'gruvbox-community/gruvbox'
     Plug 'justinmk/vim-syntax-extra'
     Plug 'vifm/vifm.vim'
+    Plug 'ludovicchabant/vim-gutentags'
+    Plug 'zackhsi/fzf-tags'
 call plug#end()
 
 " HOWTOs:
@@ -119,8 +120,6 @@ let g:fzf_action = {
 map <leader>, :Files<CR>
 map <leader>b :Buffers<CR>
 nnoremap <leader>g :Rg<CR>
-nnoremap <leader>t :Tags<CR>
-nnoremap <leader>m :Marks<CR>
 
 let g:fzf_tags_command = 'ctags -R'
 " Border color
@@ -172,6 +171,9 @@ command! -bang -nargs=* GGrep
   \ call fzf#vim#grep(
   \   'git grep --line-number '.shellescape(<q-args>), 0,
   \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+
+" Fzf-tags
+nmap <leader>t <Plug>(fzf_tags)
 
 " Vim-Go configuration
 " Better syntax higlighting
@@ -255,7 +257,7 @@ set hidden
 set nowritebackup
 
 " Better display for messages
-set cmdheight=2
+set cmdheight=1
 
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
