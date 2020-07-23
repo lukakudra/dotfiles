@@ -104,9 +104,6 @@ bindsym Shift+XF86ScreenSaver exec light -S 100 # set brightness to 100
 bindsym XF86TouchpadToggle exec toggle-touchpad
 bindsym $mod+minus exec toggle-touchpad
 
-# exit i3 binding
-bindsym $mod+Shift+Escape exec --no-startup-id yes-no "exit i3?" "i3-msg exit"
-
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -262,6 +259,23 @@ mode "move" {
     bindsym Escape mode "default"
 }
 
+# shutdown, reboot, lock screen, exit i3
+set $locker slock
+
+set $mode_system System (l) lock, (e) logout (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l --release exec --no-startup-id $locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+Escape mode "$mode_system"
+
 # window rules
 for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 for_window [window_role="GtkFileChooserDialog"] move position center
@@ -272,7 +286,6 @@ for_window [class=File-roller|Pavucontrol|Nm-connection-editor] floating enable
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {   
-        
         font pango:Inconsolata Bold 11
         status_command i3status
 }

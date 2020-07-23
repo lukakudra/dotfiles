@@ -1,0 +1,23 @@
+#!/bin/bash
+
+title="select display"
+prompt="pick an option:"
+
+alldisplays=$(xrandr --listmonitors | awk '{print $4}' | grep "\S")
+set -f
+displayarray=(${alldisplays//\n/ })
+
+for i in "${!displayarray[@]}"
+do
+    PS3="${displayarray[i]}: "
+    select answer in "on" "off"; do
+        case "$answer" in
+            on ) echo $answer
+                break;;
+            off ) echo $answer
+                break;;
+            *) echo "Invalid option. Try another one."; continue;;
+        esac
+    done
+done
+
