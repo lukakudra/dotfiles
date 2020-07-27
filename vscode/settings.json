@@ -4,7 +4,7 @@
     "workbench.colorTheme": "Gruvbox Dark (Medium)",
     "window.menuBarVisibility": "toggle",
     "editor.fontSize": 14,
-    "git.enabled": false,
+    "git.enabled": true,
     "window.zoomLevel": 0,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.iconTheme": "vscode-icons",
@@ -26,14 +26,14 @@
     "git.confirmSync": false,
     "update.mode": "none",
     "terminal.external.linuxExec": "termite",
-    "vim.useCtrlKeys": true,
-    "vim.handleKeys": {
-        "<C-o>": false,
-        "<C-i>": false,
-        "<C-f>": false,
-        "<C-g>": false,
-        "<C-h>": false
-    },
+    // "vim.useCtrlKeys": true,
+    // "vim.handleKeys": {
+    //     "<C-o>": false,
+    //     "<C-i>": false,
+    //     "<C-f>": false,
+    //     "<C-g>": false,
+    //     "<C-h>": false
+    // },
     "C_Cpp.intelliSenseEngine": "Disabled",
     "C_Cpp.errorSquiggles": "Disabled",
     "clangd.arguments": [
