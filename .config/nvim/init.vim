@@ -7,8 +7,8 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'junegunn/fzf.vim'
     Plug 'airblade/vim-rooter'
 	Plug 'tpope/vim-fugitive'
-	Plug 'scrooloose/nerdcommenter'
-	Plug 'scrooloose/nerdtree'
+    Plug 'preservim/nerdcommenter'
+    Plug 'preservim/nerdtree'
 	Plug 'vim-scripts/auto-pairs-gentle'
     Plug 'junegunn/goyo.vim'
     Plug 'vim-airline/vim-airline'
@@ -201,11 +201,13 @@ let g:AutoPairsUseInsertedCount = 1
 map <leader>n :Goyo \| set linebreak<CR>
 
 " NerdTree configuration:
-nmap <C-M-b> :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen=0
-nmap <leader>v :NERDTreeFind<CR>
-" autocmd BufWinEnter * NERDTreeMirror
+" open automatically when opening vim
+" autocmd vimenter * NERDTree
+" close if the only buffer remaining open is NerdTree buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+nmap <C-M-b> :NERDTreeToggle<CR>
+nmap <leader>v :NERDTreeFind<CR>
+let NERDTreeQuitOnOpen=1
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
