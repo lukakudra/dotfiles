@@ -5,6 +5,7 @@
     "window.menuBarVisibility": "toggle",
     "editor.fontSize": 14,
     "git.enabled": true,
+    "search.followSymlinks": false,
     "window.zoomLevel": 0,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.iconTheme": "vscode-icons",
