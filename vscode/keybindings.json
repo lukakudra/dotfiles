@@ -1,7 +1,7 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
     {
-        "key": "ctrl+shift+q",
+        "key": "ctrl+shift+\\",
         "command": "editor.action.jumpToBracket",
         "when": "editorTextFocus"
     },
@@ -11,7 +11,7 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+shift+7",
+        "key": "ctrl+shift+q",
         "command": "editor.action.commentLine",
         "when": "editorTextFocus && !editorReadonly"
     },
@@ -21,7 +21,7 @@
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+alt+f",
+        "key": "ctrl+[",
         "command": "editor.action.indentLines",
         "when": "editorTextFocus && !editorReadonly"
     },
@@ -31,7 +31,7 @@
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+alt+g",
+        "key": "ctrl+]",
         "command": "editor.action.outdentLines",
         "when": "editorTextFocus && !editorReadonly"
     },
