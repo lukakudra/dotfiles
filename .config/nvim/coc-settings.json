@@ -1,9 +1,11 @@
 {
-    "diagnostic.enable": true,
+    "diagnostic.enable": false,
     "suggest.autoTrigger": "none",
-    "coc.preferences.formatOnSaveFiletypes": [],
+    "coc.preferences.formatOnSaveFiletypes": [
+        "json"
+    ],
     "json.enable": true,
-    "json.format.enable": false,
+    "json.format.enable": true,
     "python.linting.enabled": false,
     "python.linting.pylintEnabled": false,
     "clangd.enabled": true,
@@ -11,8 +13,9 @@
     "clangd.disableSnippetCompletion": false,
     "clangd.fallbackFlags": [],
     "clangd.arguments": [
-        "--background-index",
-        "--compile-commands-dir=build/"
+        "-background-index",
+        "-compile-commands-dir=build/",
+        "--header-insertion=never"
     ],
     "languageserver": {
         "golang": {

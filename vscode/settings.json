@@ -32,7 +32,8 @@
     "C_Cpp.errorSquiggles": "Disabled",
     "clangd.arguments": [
         "-background-index",
-        "-compile-commands-dir=build/"
+        "-compile-commands-dir=build/",
+        "--header-insertion=never"
     ],
     "[c]": {
         "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
