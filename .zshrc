@@ -77,19 +77,13 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 _comp_options+=(globdots) # Include hidden files
 
-# Use vim keys in tab complete menu
-bindkey -M menuselect '^h' vi-backward-char
-bindkey -M menuselect '^k' vi-up-line-or-history
-bindkey -M menuselect '^l' vi-forward-char
-bindkey -M menuselect '^j' vi-down-line-or-history
-
 # Edit line in vim with ctrl-e
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
 # Show dynamic terminal title
 case "$TERM" in
-    vte*|xterm*|rxvt*)
+    vte*|xterm*|alacritty|rxvt*)
         precmd() { print -Pn '\e];%n (%~) - Terminal\a' } ;;
 esac
 
@@ -109,37 +103,6 @@ export FZF_CTRL_T_COMMAND='rg --hidden --files'
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 export PATH="$PATH:$GOBIN"
-
-# # Nodejs with nvm
-# export NVM_DIR="$HOME/.nvm"
-# node_aliases=(
-# node
-# npm
-# yarn
-# )
-# nvm () {
-  # orig=$1
-  # if [ -z "$orig" ] ; then
-    # orig='nvm'
-  # else
-    # shift
-  # fi
-
-  # >&2 echo "Loading nvm for the first time..."
-  # if [ -s "$NVM_DIR/nvm.sh" ] ; then
-    # unset -f nvm
-    # for a in $node_aliases ; do
-      # unalias $a 2> /dev/null
-    # done
-    # \source "$NVM_DIR/nvm.sh" # This loads nvm
-    # echo "Running '$orig $*'"
-    # $orig $*
-  # fi
-# }
-
-# for a in $node_aliases ; do
-  # alias $a="nvm $a"
-# done
 
 # Aliases
 alias v=nvim

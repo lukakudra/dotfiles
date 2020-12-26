@@ -1,2 +1,0 @@
-#!/bin/sh
-notify-send -i /home/luka/Documents/Scripts/mail-icon/mail-client.png "New Mail"

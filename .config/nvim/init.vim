@@ -7,7 +7,6 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'junegunn/fzf.vim'
     Plug 'airblade/vim-rooter'
 	Plug 'tpope/vim-fugitive'
-    Plug 'preservim/nerdcommenter'
     Plug 'preservim/nerdtree'
 	Plug 'vim-scripts/auto-pairs-gentle'
     Plug 'junegunn/goyo.vim'
@@ -18,6 +17,7 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'vifm/vifm.vim'
     Plug 'ludovicchabant/vim-gutentags'
     Plug 'zackhsi/fzf-tags'
+    Plug 'tpope/vim-commentary'
 call plug#end()
 
 " HOWTOs:
@@ -221,13 +221,8 @@ nmap <leader>e :EditVifm<CR>
 set noshowmode
 let g:airline_powerline_fonts = 1
 
-" NerdCommenter config
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-" Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
-" Change default delimiters for C
-let g:NERDAltDelims_c = 1
+" Vim-commentary
+autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 
 " Clang-format
 let g:clang_format#detect_style_file = 1

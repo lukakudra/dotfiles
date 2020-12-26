@@ -1,5 +1,0 @@
-#!/bin/sh
-
-firefox --new-window https://web.whatsapp.com/
-sleep .5
-firefox --new-tab https://facebook.com/messages
