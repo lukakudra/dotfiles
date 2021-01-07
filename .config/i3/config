@@ -60,7 +60,7 @@ bindsym $mod+d exec --no-startup-id rofi -show run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # dropdown terminal
-exec --no-startup-id /usr/bin/termite -c $HOME/.config/termite/config_transparent --name "dropdown" -e tmuxdd &
+exec --no-startup-id /usr/bin/alacritty --class "dropdown" -e tmuxdd &
 
 bindsym $mod+z [instance="dropdown"] scratchpad show, move position center
 
@@ -68,9 +68,9 @@ for_window [instance="dropdown"] floating enable, resize set 1300 700, \
 move scratchpad
 
 # start frequently used programs with keyboard shortcuts
-bindsym $mod+Shift+Return exec --no-startup-id samedir
+# bindsym $mod+Shift+Return exec --no-startup-id samedir
 bindsym $mod+i exec --no-startup-id firefox
-bindsym $mod+e exec --no-startup-id $term -e dvifm
+bindsym $mod+e exec --no-startup-id $term -e ranger
 bindsym $mod+p exec --no-startup-id thunderbird
 bindsym $mod+x --release exec --no-startup-id slock
 bindsym $mod+v exec --no-startup-id $term -e dnvim

@@ -27,7 +27,7 @@
     "scm.diffDecorations": "all",
     "git.confirmSync": false,
     "update.mode": "none",
-    "terminal.external.linuxExec": "termite",
+    "terminal.external.linuxExec": "alacritty",
     "C_Cpp.intelliSenseEngine": "Disabled",
     "C_Cpp.errorSquiggles": "Disabled",
     "clangd.arguments": [

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+dragon-drag-and-drop -a -x "$1"
