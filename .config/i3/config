@@ -68,7 +68,7 @@ for_window [instance="dropdown"] floating enable, resize set 1300 700, \
 move scratchpad
 
 # start frequently used programs with keyboard shortcuts
-# bindsym $mod+Shift+Return exec --no-startup-id samedir
+bindsym $mod+Shift+Return exec --no-startup-id samedir
 bindsym $mod+i exec --no-startup-id firefox
 bindsym $mod+e exec --no-startup-id $term -e ranger
 bindsym $mod+p exec --no-startup-id thunderbird
