@@ -119,7 +119,7 @@ export PATH="$PATH:$GOBIN"
 # Aliases
 alias v=nvim
 alias vim=nvim
-alias f=vifm
+alias f=ranger
 alias m=music
 alias p=playlist
 

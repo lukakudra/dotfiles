@@ -14,10 +14,11 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'rhysd/vim-clang-format'
     Plug 'gruvbox-community/gruvbox'
     Plug 'justinmk/vim-syntax-extra'
-    Plug 'vifm/vifm.vim'
-    Plug 'ludovicchabant/vim-gutentags'
+    " Plug 'ludovicchabant/vim-gutentags'
     Plug 'zackhsi/fzf-tags'
     Plug 'tpope/vim-commentary'
+    Plug 'rbgrouleff/bclose.vim'
+    Plug 'francoiscabrol/ranger.vim'
 call plug#end()
 
 " HOWTOs:
@@ -213,10 +214,6 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let g:NERDTreeWinSize=60
 
-" Vifm configuration
-nmap <leader>w :TabVifm<CR>
-nmap <leader>e :EditVifm<CR>
-
 " Airline
 set noshowmode
 let g:airline_powerline_fonts = 1
@@ -228,7 +225,41 @@ autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 let g:clang_format#detect_style_file = 1
 let g:clang_format#code_style = 'llvm'
 let g:clang_format#auto_format = 1
-nmap <Leader>f :ClangFormatAutoToggle<CR>
+nmap <Leader>c :ClangFormatAutoToggle<CR>
+
+" Gutentags
+let g:gutentags_add_default_project_roots = 0
+let g:gutentags_project_root  = ['package.json', '.git', '.hg', '.svn']
+let g:gutentags_cache_dir = expand('~/.gutentags_cache')
+let g:gutentags_exclude_filetypes = ['gitcommit', 'gitconfig', 'gitrebase', 'gitsendemail', 'git']
+let g:gutentags_generate_on_new = 1
+let g:gutentags_generate_on_missing = 1
+let g:gutentags_generate_on_write = 1
+let g:gutentags_generate_on_empty_buffer = 0
+let g:gutentags_ctags_extra_args = ['--tag-relative=yes', '--fields=+ailmnS']
+let g:gutentags_ctags_exclude = [
+\  '*.git', '*.svn', '*.hg',
+\  'cache', 'build', 'dist', 'bin', 'node_modules', 'bower_components',
+\  '*-lock.json',  '*.lock',
+\  '*.min.*',
+\  '*.bak',
+\  '*.zip',
+\  '*.pyc',
+\  '*.class',
+\  '*.sln',
+\  '*.csproj', '*.csproj.user',
+\  '*.tmp',
+\  '*.cache',
+\  '*.vscode',
+\  '*.pdb',
+\  '*.exe', '*.dll', '*.bin',
+\  '*.mp3', '*.ogg', '*.flac',
+\  '*.swp', '*.swo',
+\  '.DS_Store', '*.plist',
+\  '*.bmp', '*.gif', '*.ico', '*.jpg', '*.png', '*.svg',
+\  '*.rar', '*.zip', '*.tar', '*.tar.gz', '*.tar.xz', '*.tar.bz2',
+\  '*.pdf', '*.doc', '*.docx', '*.ppt', '*.pptx', '*.xls',
+\]
 
 " COC CONFIG:
 " coc extensions
