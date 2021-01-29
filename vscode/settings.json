@@ -28,6 +28,15 @@
     "git.confirmSync": false,
     "update.mode": "none",
     "terminal.external.linuxExec": "alacritty",
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false,
+    "gitlens.hovers.enabled": false,
+    "gitlens.statusBar.enabled": false,
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    // Programming language specific settings
+    // C
     "C_Cpp.intelliSenseEngine": "Disabled",
     "C_Cpp.errorSquiggles": "Disabled",
     "clangd.arguments": [
@@ -39,6 +48,7 @@
         "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
     },
     "clangd.semanticHighlighting": false,
+    // Go
     "go.formatTool": "goimports",
     "go.useLanguageServer": true,
     "[go]": {
@@ -70,12 +80,4 @@
         "serve",
         "--debug=localhost:6060", // to investigate memory usage, see profiles
     ],
-    "go.languageServerExperimentalFeatures": {
-        "documentLink": false,
-    },
-    "gitlens.currentLine.enabled": false,
-    "gitlens.hovers.currentLine.over": "line",
-    "gitlens.codeLens.enabled": false,
-    "gitlens.hovers.enabled": false,
-    "gitlens.statusBar.enabled": false
 }
