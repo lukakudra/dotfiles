@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Original author of this script is Luke Smith from lukesmith.xyz
+# original script: https://github.com/LukeSmithxyz/voidrice/blob/master/.local/bin/dmenurecord
 
 # Usage:
 # `$0`: Ask for recording type via rofi -dmenu

@@ -1,7 +1,11 @@
 #!/bin/sh
 
+# original script: https://github.com/LukeSmithxyz/voidrice/blob/master/.local/bin/remaps
+
 # Map the caps lock key to super
 setxkbmap -option caps:super
 # But when it is just pressed and not held, treat it as escape
 killall xcape 2>/dev/null; xcape -e 'Super_L=Escape'
+# Turn off the caps lock if on since there is no longer a key for it.
+xset -q | grep "Caps Lock:\s*on" && xdotool key Caps_Lock
 

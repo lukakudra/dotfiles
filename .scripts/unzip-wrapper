@@ -1,5 +1,0 @@
-#!/bin/sh
-
-f=$1
-unzip -d "${f%.zip}" "$f"
-
