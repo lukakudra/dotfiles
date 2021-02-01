@@ -28,11 +28,6 @@
     "git.confirmSync": false,
     "update.mode": "none",
     "terminal.external.linuxExec": "alacritty",
-    "gitlens.currentLine.enabled": false,
-    "gitlens.hovers.currentLine.over": "line",
-    "gitlens.codeLens.enabled": false,
-    "gitlens.hovers.enabled": false,
-    "gitlens.statusBar.enabled": false,
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
     // Programming language specific settings
@@ -44,10 +39,11 @@
         "-compile-commands-dir=build/",
         "--header-insertion=never"
     ],
+    "clangd.semanticHighlighting": false,
+    "clangd.onConfigChanged": "restart",
     "[c]": {
         "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
     },
-    "clangd.semanticHighlighting": false,
     // Go
     "go.formatTool": "goimports",
     "go.useLanguageServer": true,
