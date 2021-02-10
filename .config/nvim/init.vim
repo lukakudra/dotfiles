@@ -56,7 +56,7 @@ set mouse=a
 
 set tabstop=4
 set shiftwidth=4
-set expandtab
+" set expandtab
 set conceallevel=0
 
 set path+=**
