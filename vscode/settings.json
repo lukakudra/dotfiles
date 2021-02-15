@@ -30,6 +30,7 @@
     "terminal.external.linuxExec": "alacritty",
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
+    "extensions.ignoreRecommendations": true,
     // Programming language specific settings
     // C
     "C_Cpp.intelliSenseEngine": "Disabled",
