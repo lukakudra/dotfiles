@@ -7,6 +7,8 @@
 
 # Colored ls output
 alias ls='ls --color=auto'
+# More info with ll
+alias ll='ls -alF'
 
 # Prompt setup
 SPACESHIP_PROMPT_ADD_NEWLINE=true
