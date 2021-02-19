@@ -272,7 +272,6 @@ bindsym $mod+Shift+Escape mode "$mode_system"
 for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 for_window [window_role="GtkFileChooserDialog"] move position center
 for_window [title="Default - Wine desktop"] floating enable
-assign [class=Thunderbird] 10
 for_window [class=File-roller|Pavucontrol|Nm-connection-editor] floating enable
 
 # Start i3bar to display a workspace bar (plus the system information i3status
