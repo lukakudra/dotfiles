@@ -265,11 +265,7 @@ let g:gutentags_ctags_exclude = [
 " coc extensions
 let g:coc_global_extensions = [
     \'coc-json',
-    \'coc-html',
-    \'coc-css',
-    \'coc-yaml',
     \'coc-python',
-    \'coc-markdownlint',
     \'coc-go',
     \'coc-yaml',
     \'coc-cmake',
