@@ -10,40 +10,9 @@ alias ls='ls --color=auto'
 # More info with ll
 alias ll='ls -alF'
 
-# Prompt setup
-SPACESHIP_PROMPT_ADD_NEWLINE=true
-SPACESHIP_PROMPT_SEPARATE_LINE=true
-SPACESHIP_CHAR_SYMBOL=❯
-SPACESHIP_CHAR_SUFFIX=" "
-SPACESHIP_HG_SHOW=false
-SPACESHIP_PACKAGE_SHOW=false
-SPACESHIP_NODE_SHOW=false
-SPACESHIP_RUBY_SHOW=false
-SPACESHIP_ELM_SHOW=false
-SPACESHIP_ELIXIR_SHOW=false
-SPACESHIP_XCODE_SHOW_LOCAL=false
-SPACESHIP_SWIFT_SHOW_LOCAL=false
-SPACESHIP_GOLANG_SHOW=false
-SPACESHIP_PHP_SHOW=false
-SPACESHIP_RUST_SHOW=false
-SPACESHIP_JULIA_SHOW=false
-SPACESHIP_DOCKER_SHOW=false
-SPACESHIP_DOCKER_CONTEXT_SHOW=false
-SPACESHIP_AWS_SHOW=false
-SPACESHIP_CONDA_SHOW=false
-SPACESHIP_VENV_SHOW=true
-SPACESHIP_PYENV_SHOW=true
-SPACESHIP_DOTNET_SHOW=false
-SPACESHIP_EMBER_SHOW=false
-SPACESHIP_KUBECONTEXT_SHOW=false
-SPACESHIP_TERRAFORM_SHOW=false
-SPACESHIP_TERRAFORM_SHOW=false
-SPACESHIP_VI_MODE_SHOW=false
-SPACESHIP_EXEC_TIME_SHOW=false
-SPACESHIP_JOBS_SHOW=false
-
+fpath+="$HOME/.zsh/pure"
 autoload -U promptinit; promptinit
-prompt spaceship
+prompt pure
 
 # Show NTFS folders with normal colors
 LS_COLORS=$LS_COLORS:'ow=1;34:tw=1;34:' ; export LS_COLORS
@@ -65,7 +34,7 @@ setopt appendhistory autocd beep extendedglob nomatch notify
 bindkey -v
 KEYTIMEOUT=1
 bindkey '^R' history-incremental-search-backward
-zstyle :compinstall filename '/home/luka/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 
 # Case insensitive autocomplete
 setopt MENU_COMPLETE
