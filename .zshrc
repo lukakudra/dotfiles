@@ -13,6 +13,7 @@ alias ll='ls -alF'
 fpath+="$HOME/.zsh/pure"
 autoload -U promptinit; promptinit
 prompt pure
+zstyle :prompt:pure:git:stash show yes
 
 # Show NTFS folders with normal colors
 LS_COLORS=$LS_COLORS:'ow=1;34:tw=1;34:' ; export LS_COLORS

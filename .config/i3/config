@@ -71,7 +71,8 @@ move scratchpad
 bindsym $mod+Shift+Return exec --no-startup-id samedir
 bindsym $mod+i exec --no-startup-id firefox
 bindsym $mod+e exec --no-startup-id $term -e ranger
-bindsym $mod+p exec --no-startup-id thunderbird
+bindsym $mod+p exec --no-startup-id pavucontrol
+bindsym $mod+n exec --no-startup-id thunderbird
 bindsym $mod+x --release exec --no-startup-id slock
 bindsym $mod+v exec --no-startup-id code
 bindsym $mod+m exec --no-startup-id $term -e mocp
