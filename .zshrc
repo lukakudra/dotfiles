@@ -94,4 +94,4 @@ alias vim=nvim
 alias f=ranger
 alias m=music
 alias p=playlist
-
+alias code="GTK_THEME=Adwaita:dark code"
