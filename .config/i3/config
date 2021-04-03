@@ -58,12 +58,15 @@ bindsym $mod+d exec --no-startup-id rofi -show run
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# dropdown terminal
-exec --no-startup-id /usr/bin/alacritty --class "dropdown" -e tmuxdd &
+# dropdown terminals
+exec --no-startup-id /usr/bin/alacritty --class "dropdown_term" &
+bindsym $mod+z [instance="dropdown_term"] scratchpad show, move position center
+for_window [instance="dropdown_term"] floating enable, resize set 900 600, \
+move scratchpad
 
-bindsym $mod+z [instance="dropdown"] scratchpad show, move position center
-
-for_window [instance="dropdown"] floating enable, resize set 1300 700, \
+exec --no-startup-id /usr/bin/alacritty --class "dropdown_text" &
+bindsym $mod+u [instance="dropdown_text"] scratchpad show, move position center
+for_window [instance="dropdown_text"] floating enable, resize set 1300 700, \
 move scratchpad
 
 # start frequently used programs with keyboard shortcuts
@@ -80,7 +83,7 @@ bindsym Shift+Print --release exec --no-startup-id flameshot full -c -p ~/Pictur
 # bindsym Print --release exec --no-startup-id print-screen-to-clipboard
 # bindsym Shift+Print --release exec --no-startup-id print-screen-to-file
 bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' # uses greenclip and rofi to show a clipboard
-bindsym $mod+u exec --no-startup-id rofi-emoji
+bindsym $mod+Shift+u exec --no-startup-id rofi-emoji
 bindsym $mod+Shift+e exec --no-startup-id rofi -show window
 bindsym $mod+Shift+d exec --no-startup-id displayselect
 bindsym $mod+comma exec --no-startup-id $term -e weather-nova-gradiska

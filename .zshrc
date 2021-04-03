@@ -32,7 +32,7 @@ HISTFILE=~/.histfile
 HISTSIZE=99999999
 SAVEHIST=$HISTSIZE
 setopt appendhistory autocd beep extendedglob nomatch notify
-bindkey -e
+bindkey -v
 KEYTIMEOUT=1
 bindkey '^R' history-incremental-search-backward
 zstyle :compinstall filename '$HOME/.zshrc'
@@ -53,8 +53,8 @@ _comp_options+=(globdots) # Include hidden files
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
-# create a zkbd compatible hash;
-# to add other keys to this hash, see: man 5 terminfo
+# Create a zkbd compatible hash;
+# To add other keys to this hash, see: man 5 terminfo
 typeset -g -A key
 
 key[Home]="${terminfo[khome]}"
@@ -70,7 +70,7 @@ key[PageUp]="${terminfo[kpp]}"
 key[PageDown]="${terminfo[knp]}"
 key[Shift-Tab]="${terminfo[kcbt]}"
 
-# setup key accordingly
+# Setup key accordingly
 [[ -n "${key[Home]}"      ]] && bindkey -- "${key[Home]}"       beginning-of-line
 [[ -n "${key[End]}"       ]] && bindkey -- "${key[End]}"        end-of-line
 [[ -n "${key[Insert]}"    ]] && bindkey -- "${key[Insert]}"     overwrite-mode
@@ -94,13 +94,12 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
 
-# ctrl+left and ctrl+right move by words
+# Move by words using ctrl+left and ctrl+right
 key[Control-Left]="${terminfo[kLFT5]}"
 key[Control-Right]="${terminfo[kRIT5]}"
 
 [[ -n "${key[Control-Left]}"  ]] && bindkey -- "${key[Control-Left]}"  backward-word
 [[ -n "${key[Control-Right]}" ]] && bindkey -- "${key[Control-Right]}" forward-word
-
 
 # Show dynamic terminal title
 autoload -Uz add-zsh-hook
