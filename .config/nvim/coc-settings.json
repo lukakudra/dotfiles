@@ -1,31 +1,32 @@
 {
-    "diagnostic.enable": true,
-    "suggest.autoTrigger": "none",
-    "coc.preferences.formatOnSaveFiletypes": [
-        "json"
-    ],
-    "json.enable": true,
-    "json.format.enable": true,
-    "python.linting.enabled": false,
-    "python.linting.pylintEnabled": false,
-    "clangd.enabled": true,
-    "clangd.disableDiagnostics": false,
-    "clangd.disableSnippetCompletion": false,
-    "clangd.fallbackFlags": [],
-    "clangd.arguments": [
-        "-background-index",
-        "-compile-commands-dir=build/",
-        "--header-insertion=never"
-    ],
-    "languageserver": {
-        "golang": {
-            "command": "/home/luka/go/bin/gopls",
-            "rootPatterns": [
-                "go.mod"
-            ],
-            "filetypes": [
-                "go"
-            ]
-        }
-    }
+	"coc.preferences.extensionUpdateCheck": "never",
+	"diagnostic.enable": true,
+	"suggest.autoTrigger": "none",
+	"coc.preferences.formatOnSaveFiletypes": [
+		"json"
+	],
+	"json.enable": true,
+	"json.format.enable": true,
+	"python.linting.enabled": false,
+	"python.linting.pylintEnabled": false,
+	"clangd.enabled": true,
+	"clangd.disableDiagnostics": false,
+	"clangd.disableSnippetCompletion": false,
+	"clangd.fallbackFlags": [],
+	"clangd.arguments": [
+		"-background-index",
+		"-compile-commands-dir=build/",
+		"--header-insertion=never"
+	],
+	"languageserver": {
+		"golang": {
+			"command": "$HOME/go/bin/gopls",
+			"rootPatterns": [
+				"go.mod"
+			],
+			"filetypes": [
+				"go"
+			]
+		}
+	}
 }
