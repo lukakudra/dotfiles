@@ -219,7 +219,7 @@ StartInMusicDir = yes
 #
 # Example:    Theme = laras_theme
 #
-Theme = darkdot_theme
+Theme = black_theme
 
 # The theme used when running on an xterm.
 #
@@ -281,7 +281,7 @@ Theme = darkdot_theme
 #
 # Example:    Keymap = my_keymap
 #
-Keymap = vim_like_keymap
+# Keymap = vim_like_keymap
 
 # Use ASCII rather than graphic characters for drawing lines.  This
 # helps on some terminals.
