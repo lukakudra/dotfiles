@@ -33,8 +33,7 @@ floating_modifier $mod
 # autostart applications
 exec --no-startup-id hsetroot -solid black
 exec --no-startup-id toggle-touchpad
-exec --no-startup-id greenclip daemon
-exec --no-startup-id /usr/bin/dunst
+exec --no-startup-id dunst
 exec --no-startup-id picom -b
 exec --no-startup-id flameshot
 exec --no-startup-id dockd --daemon
@@ -51,8 +50,7 @@ bindsym $mod+q   [con_id="__focused__" instance="^(?!dropdown).*$"] kill
 bindsym $mod+Shift+q [con_id="__focused__" instance="^(?!dropdown).*$"] exec --no-startup-id kill -9 `xdotool getwindowfocus getwindowpid`
 
 # start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec dmenu_run -fn Inconsolata:size=10
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -76,15 +74,13 @@ bindsym $mod+e exec --no-startup-id $term -e ranger
 bindsym $mod+p exec --no-startup-id pavucontrol
 bindsym $mod+n exec --no-startup-id thunderbird
 bindsym $mod+x --release exec --no-startup-id slock
+bindsym $mod+c exec --no-startup-id clipmenu -i -fn Inconsolata:size=10
 bindsym $mod+v exec --no-startup-id GTK_THEME=Adwaita:dark code
 bindsym $mod+m exec --no-startup-id $term -e mocp
 bindsym Print --release exec --no-startup-id flameshot gui -p ~/Pictures/screenshots
 bindsym Shift+Print --release exec --no-startup-id flameshot full -c -p ~/Pictures/screenshots
 # bindsym Print --release exec --no-startup-id print-screen-to-clipboard
 # bindsym Shift+Print --release exec --no-startup-id print-screen-to-file
-bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' # uses greenclip and rofi to show a clipboard
-bindsym $mod+Shift+u exec --no-startup-id rofi-emoji
-bindsym $mod+Shift+e exec --no-startup-id rofi -show window
 bindsym $mod+Shift+d exec --no-startup-id displayselect
 bindsym $mod+comma exec --no-startup-id $term -e weather-nova-gradiska
 bindsym $mod+period exec --no-startup-id $term -e weather-zagreb

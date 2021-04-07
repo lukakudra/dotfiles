@@ -1,6 +1,0 @@
-#!/bin/sh
-
-# This script toggles mpv window with webcam in lower right corner
-# of the screen
-
-pkill -f /dev/video || mpv --no-osc --no-input-default-bindings --input-conf=/dev/null --geometry=-0-24 --autofit=30%  --title="mpvfloat" /dev/video0
