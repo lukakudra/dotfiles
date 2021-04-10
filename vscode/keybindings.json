@@ -1,7 +1,7 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
     {
-        "key": "ctrl+shift+8",
+        "key": "ctrl+shift+\\",
         "command": "editor.action.jumpToBracket",
         "when": "editorTextFocus"
     },
@@ -39,10 +39,6 @@
         "key": "ctrl+[",
         "command": "-editor.action.outdentLines",
         "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+shift+9",
-        "command": "editor.action.selectToBracket"
     },
     {
         "key": "ctrl+k l",
