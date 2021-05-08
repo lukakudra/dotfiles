@@ -2,7 +2,7 @@
 
 call plug#begin(stdpath('data') . '/plugged')
     Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-    Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug '/usr/bin/fzf'
     Plug 'junegunn/fzf.vim'
     Plug 'airblade/vim-rooter'
@@ -62,6 +62,8 @@ set conceallevel=0
 set path+=**
 set wildmenu
 set wildmode=longest:full,full
+set ignorecase
+set smartcase
 
 " Disables automatic commenting on newline:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
