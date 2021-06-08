@@ -1,20 +1,3 @@
-/* .tabbrowser-tab { */
-/*     padding-inline: 0px !important; */
-/* } */
-/* .tab-stack { */
-/*     border-style: solid !important; */
-/*     border-width: 0px 1px 0px 0px !important; */
-/*     border-color: #BCBEBF !important; */
-/* } */
-/* .tab-background { */
-/*     margin-block: 0px !important; */
-/*     box-shadow: none !important; */
-/*     border-radius: 0px !important; */
-/* } */
-/* #tabbrowser-tabs { --tab-min-height: min-content !important;} */
-
-/*** Proton Tabs Tweaks ***/
-
 /* Adjust tab corner shape, optionally remove space below tabs */
 
 #tabbrowser-tabs {
