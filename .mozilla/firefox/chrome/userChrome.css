@@ -2,7 +2,6 @@
 
 #tabbrowser-tabs {
     --user-tab-rounding: 0px;
-	--tab-min-height: min-content !important;
 }
 @media (-moz-proton) {
     .tab-background {
