@@ -7,27 +7,6 @@ menupopup > menuitem, menupopup > menu {
   --arrowpanel-menuitem-padding: 4px 8px !important;
 }
 
-/* tab background */
-
-.tab-background {
-    background-attachment: none!important;
-    background-color: #cccdcf!important;
-    background-image: none!important;
-}
-
-.tab-background[selected="true"] {
-    background-attachment: none!important;
-    background-color: #f7f6f6!important;
-    background-image: none!important;
-}
-
-#TabsToolbar .tabbrowser-tab[selected] {
-    color: black !important;
-    font-weight: bold !important;
-}
-
-/* tab background */
-
 /*** Proton Tabs Tweaks ***/
 
 /* Adjust tab corner shape, optionally remove space below tabs */
@@ -85,3 +64,26 @@ menupopup > menuitem, menupopup > menu {
 }
 
 /* Tweak Options as of 6/12/2021; Generated Tue Jun 15 2021 22:06:51 GMT+0200 (Central European Summer Time) */
+
+/* tab background */
+
+.tab-background {
+    background-attachment: none!important;
+    background-color: #e8e8e7!important;
+    background-image: none!important;
+}
+
+.tab-background[selected="true"] {
+    background-attachment: none!important;
+    background-color: #f7f6f6!important;
+    background-image: none!important;
+}
+
+#TabsToolbar .tabbrowser-tab[selected] {
+    color: black !important;
+    font-weight: bold !important;
+}
+
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] { margin-inline-start: initial !important; }
+
+/* tab background */
