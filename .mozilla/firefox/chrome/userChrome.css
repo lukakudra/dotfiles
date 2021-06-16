@@ -7,6 +7,27 @@ menupopup > menuitem, menupopup > menu {
   --arrowpanel-menuitem-padding: 4px 8px !important;
 }
 
+/* tab background */
+
+.tab-background {
+    background-attachment: none!important;
+    background-color: #cccdcf!important;
+    background-image: none!important;
+}
+
+.tab-background[selected="true"] {
+    background-attachment: none!important;
+    background-color: #f7f6f6!important;
+    background-image: none!important;
+}
+
+#TabsToolbar .tabbrowser-tab[selected] {
+    color: black !important;
+    font-weight: bold !important;
+}
+
+/* tab background */
+
 /*** Proton Tabs Tweaks ***/
 
 /* Adjust tab corner shape, optionally remove space below tabs */
