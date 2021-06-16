@@ -7,6 +7,8 @@ menupopup > menuitem, menupopup > menu {
   --arrowpanel-menuitem-padding: 4px 8px !important;
 }
 
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] { margin-inline-start: initial !important; }
+
 /*** Proton Tabs Tweaks ***/
 
 /* Adjust tab corner shape, optionally remove space below tabs */
@@ -67,23 +69,21 @@ menupopup > menuitem, menupopup > menu {
 
 /* tab background */
 
-.tab-background {
-    background-attachment: none!important;
-    background-color: #e8e8e7!important;
-    background-image: none!important;
-}
+/* .tab-background { */
+/*     background-attachment: none!important; */
+/*     background-color: #e8e8e7!important; */
+/*     background-image: none!important; */
+/* } */
 
-.tab-background[selected="true"] {
-    background-attachment: none!important;
-    background-color: #f7f6f6!important;
-    background-image: none!important;
-}
+/* .tab-background[selected="true"] { */
+/*     background-attachment: none!important; */
+/*     background-color: #f7f6f6!important; */
+/*     background-image: none!important; */
+/* } */
 
-#TabsToolbar .tabbrowser-tab[selected] {
-    color: black !important;
-    font-weight: bold !important;
-}
-
-#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] { margin-inline-start: initial !important; }
+/* #TabsToolbar .tabbrowser-tab[selected] { */
+/*     color: black !important; */
+/*     font-weight: bold !important; */
+/* } */
 
 /* tab background */
