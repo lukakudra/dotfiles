@@ -6,7 +6,6 @@
     "editor.fontSize": 14,
     "git.enabled": true,
     "search.followSymlinks": false,
-    "window.zoomLevel": 0,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.iconTheme": "vscode-icons",
     "workbench.activityBar.visible": true,
@@ -31,6 +30,8 @@
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
     "extensions.ignoreRecommendations": true,
+    "workbench.editor.untitled.hint": "hidden",
+    "security.workspace.trust.enabled": false,
     // Programming language specific settings
     // C
     "C_Cpp.intelliSenseEngine": "Disabled",
