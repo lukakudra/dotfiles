@@ -67,23 +67,21 @@ menupopup > menuitem, menupopup > menu {
 
 /* Tweak Options as of 6/12/2021; Generated Tue Jun 15 2021 22:06:51 GMT+0200 (Central European Summer Time) */
 
-/* tab background */
+/* Highlight currently active tab */
 
-/* .tab-background { */
-/*     background-attachment: none!important; */
-/*     background-color: #e8e8e7!important; */
-/*     background-image: none!important; */
-/* } */
+.tab-background[selected]::before,
 
-/* .tab-background[selected="true"] { */
-/*     background-attachment: none!important; */
-/*     background-color: #f7f6f6!important; */
-/*     background-image: none!important; */
-/* } */
+.tabbrowser-tab:hover > stack > .tab-background::before {
+	display: -moz-box;
+	height: 2px;
+	content: "";
+}
 
-/* #TabsToolbar .tabbrowser-tab[selected] { */
-/*     color: black !important; */
-/*     font-weight: bold !important; */
-/* } */
+.tab-stack:hover > .tab-background::before {
+	background-color: inherit;
+}
 
-/* tab background */
+.tab-stack > .tab-background[selected]::before {
+	background-color: highlight;
+	background-image: linear-gradient(var(--tab-line-color),var(--tab-line-color));
+}
