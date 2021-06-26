@@ -75,7 +75,7 @@ bindsym $mod+p exec --no-startup-id pavucontrol
 bindsym $mod+n exec --no-startup-id thunderbird
 bindsym $mod+x --release exec --no-startup-id slock
 bindsym $mod+c exec --no-startup-id clipmenu -i -fn Inconsolata:size=10
-bindsym $mod+v exec --no-startup-id GTK_THEME=Adwaita:dark code
+bindsym $mod+v exec --no-startup-id code
 bindsym $mod+m exec --no-startup-id $term -e mocp
 bindsym Print --release exec --no-startup-id flameshot gui -p ~/Pictures/screenshots
 bindsym Shift+Print --release exec --no-startup-id flameshot full -c -p ~/Pictures/screenshots
