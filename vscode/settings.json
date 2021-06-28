@@ -1,9 +1,7 @@
 {
-    "editor.fontFamily": "'Inconsolata', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "monospace",
     "keyboard.dispatch": "keyCode",
-    "workbench.colorTheme": "Gruvbox Dark Medium",
     "window.menuBarVisibility": "toggle",
-    "editor.fontSize": 14,
     "git.enabled": true,
     "search.followSymlinks": false,
     "workbench.startupEditor": "newUntitledFile",
@@ -78,4 +76,7 @@
         "serve",
         "--debug=localhost:6060", // to investigate memory usage, see profiles
     ],
+    "editor.inlayHints.fontFamily": "monospace",
+    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "scm.inputFontSize": 14,
 }

@@ -162,7 +162,7 @@ xterm*faceSize3: 12
 xterm*faceSize4: 16
 ! VT font menu: Huge
 xterm*faceSize5: 22
-XTerm.vt100.faceName: Inconsolata:size=12:antialias=true
+XTerm.vt100.faceName: monospace:size=10:antialias=true
 XTerm.vt100.font: 7x13
 ! this option reverses font colors
 !XTerm.VT100.reverseVideo: true
@@ -182,7 +182,7 @@ URxvt*intensityStyles: true
 URxvt*buffered: true
 URxvt*cursorBlink: false
 ! URxvt*letterSpace: -1
-URxvt*font: xft:inconsolata:size=12
+URxvt*font: xft:monospace:size=10
 URxvt*scrollBar: false
 ! URxvt*loginShell: true
 URxvt*secondaryScroll: true     # Enable Shift-PageUp/Down in screen

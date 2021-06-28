@@ -62,7 +62,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Gvim font settings:
 if has("gui_running")
-    set guifont=Inconsolata\ 12
+    set guifont=monospace\ 10
 endif
 
 " Latex
