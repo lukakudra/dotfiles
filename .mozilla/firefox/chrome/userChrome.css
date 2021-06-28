@@ -69,19 +69,19 @@ menupopup > menuitem, menupopup > menu {
 
 /* Highlight currently active tab */
 
-.tab-background[selected]::before,
+/* .tab-background[selected]::before, */
 
-.tabbrowser-tab:hover > stack > .tab-background::before {
-	display: -moz-box;
-	height: 2px;
-	content: "";
-}
+/* .tabbrowser-tab:hover > stack > .tab-background::before { */
+/* 	display: -moz-box; */
+/* 	height: 2px; */
+/* 	content: ""; */
+/* } */
 
-.tab-stack:hover > .tab-background::before {
-	background-color: inherit;
-}
+/* .tab-stack:hover > .tab-background::before { */
+/* 	background-color: inherit; */
+/* } */
 
-.tab-stack > .tab-background[selected]::before {
-	background-color: highlight;
-	background-image: linear-gradient(var(--tab-line-color),var(--tab-line-color));
-}
+/* .tab-stack > .tab-background[selected]::before { */
+/* 	background-color: highlight; */
+/* 	background-image: linear-gradient(var(--tab-line-color),var(--tab-line-color)); */
+/* } */
