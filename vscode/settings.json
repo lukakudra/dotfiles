@@ -30,6 +30,9 @@
     "extensions.ignoreRecommendations": true,
     "workbench.editor.untitled.hint": "hidden",
     "security.workspace.trust.enabled": false,
+    "editor.inlayHints.fontFamily": "monospace",
+    "scm.inputFontSize": 14,
+    "workbench.colorTheme": "Gruvbox Dark Medium",
     // Programming language specific settings
     // C
     "C_Cpp.intelliSenseEngine": "Disabled",
@@ -76,7 +79,5 @@
         "serve",
         "--debug=localhost:6060", // to investigate memory usage, see profiles
     ],
-    "editor.inlayHints.fontFamily": "monospace",
-    "workbench.colorTheme": "Gruvbox Dark Medium",
-    "scm.inputFontSize": 14,
+
 }

@@ -41,9 +41,11 @@ syntax enable
 filetype plugin on
 set encoding=utf-8
 set number
-let g:gruvbox_invert_selection='0'
 set termguicolors
 colorscheme gruvbox
+let g:gruvbox_invert_selection='0'
+let g:gruvbox_bold='0'
+let g:gruvbox_italic='1'
 set background=dark
 set cursorline
 set showtabline=2
@@ -109,10 +111,16 @@ map <leader>o :setlocal spell! spelllang=en_us<CR>
 " Save file as sudo on files that require root permission
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
-" Automatically deletes all trailing whitespace and newlines at end of file on save.
-	autocmd BufWritePre * %s/\s\+$//e
-	autocmd BufWritePre * %s/\n\+\%$//e
-	autocmd BufWritePre *.[ch] %s/\%$/\r/e
+" Delete trailing white space on save
+fun! CleanExtraSpaces()
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    silent! %s/\s\+$//e
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
+endfun
+
+autocmd BufWritePre * :call CleanExtraSpaces()
 
 " PLUGINS:
 
