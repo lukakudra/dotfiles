@@ -44,7 +44,7 @@ set number
 set termguicolors
 colorscheme gruvbox
 let g:gruvbox_invert_selection='0'
-let g:gruvbox_bold='0'
+let g:gruvbox_bold='1'
 let g:gruvbox_italic='1'
 set background=dark
 set cursorline
@@ -233,6 +233,7 @@ let g:NERDTreeWinSize=60
 " Airline
 set noshowmode
 let g:airline_powerline_fonts = 1
+let g:airline_theme='gruvbox'
 
 " Vim-commentary
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
