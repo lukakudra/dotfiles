@@ -56,6 +56,7 @@ set mouse=a
 
 set tabstop=4
 set shiftwidth=4
+set smarttab
 " set expandtab
 set conceallevel=0
 
@@ -71,16 +72,11 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Splits open at the bottom and right:
 set splitbelow splitright
 
-" fix tmux background color
-" set t_Co=256
-
 " Better tabbing
 vnoremap < <gv
 vnoremap > >gv
 
 " Navigating with guides
-" inoremap <leader><leader> <Esc>/<Enter>"_c4l
-" vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 map <leader><space> <Esc>/<++><Enter>"_c4l
 
 " Surround selected text in visual mode with characters that come in pairs
@@ -106,6 +102,17 @@ autocmd BufReadPost *
   \ if line("'\"") >= 1 && line("'\"") <= line("$") |
   \   exe "normal! g`\"" |
   \ endif
+
+" Set spellcheck
+map <leader>o :setlocal spell! spelllang=en_us<CR>
+
+" Save file as sudo on files that require root permission
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
+" Automatically deletes all trailing whitespace and newlines at end of file on save.
+	autocmd BufWritePre * %s/\s\+$//e
+	autocmd BufWritePre * %s/\n\+\%$//e
+	autocmd BufWritePre *.[ch] %s/\%$/\r/e
 
 " PLUGINS:
 
@@ -150,7 +157,6 @@ let g:fzf_colors =
 "Get Files
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
-
 
 " Get text in files with Rg
 command! -bang -nargs=* Rg
@@ -291,8 +297,14 @@ set updatetime=300
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
 
-" always show signcolumns
-set signcolumn=yes
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -332,8 +344,10 @@ nnoremap <silent> gh :call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
   else
-    call CocAction('doHover')
+    execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
 
@@ -365,11 +379,16 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
 
-" Create mappings for function text object, requires document symbols feature of languageserver.
+" Map function and class text objects
+" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
 xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
 omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
 
 " Do not use <TAB>, it conflicts with default vim bindings (<C-i> is the same as <TAB>)
 " Use <TAB> for select selections ranges, needs server support, like: coc-tsserver, coc-python
@@ -453,4 +472,3 @@ autocmd Filetype markdown,rmd inoremap ;ah [](<++>)<++><Esc>F[a
 autocmd Filetype markdown,rmd inoremap ;sec #<Space><Enter><++><Esc>kA
 autocmd Filetype markdown,rmd inoremap ;ssec ##<Space><Enter><++><Esc>kA
 autocmd Filetype markdown,rmd inoremap ;sssec ###<Space><Enter><++><Esc>kA
-
