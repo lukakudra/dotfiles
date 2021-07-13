@@ -32,7 +32,7 @@
     "security.workspace.trust.enabled": false,
     "editor.inlayHints.fontFamily": "monospace",
     "scm.inputFontSize": 14,
-    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.colorTheme": "Gruvbox Dark Medium",
     // Programming language specific settings
     // C
     "C_Cpp.intelliSenseEngine": "Disabled",

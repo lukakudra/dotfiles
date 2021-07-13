@@ -178,7 +178,7 @@ colors:
     # hard contrast background - '#1d2021'
     # medium contrast background - '#282828'
     # soft contrast background - '#32302f'
-    background:        &gruvbox_dark_bg '#1d2021'
+    background:        &gruvbox_dark_bg '#282828'
     foreground:        '#ebdbb2'
     bright_foreground: '#fbf1c7'
     dim_foreground:    '#a89984'
