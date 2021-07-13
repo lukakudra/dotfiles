@@ -32,7 +32,7 @@
     "security.workspace.trust.enabled": false,
     "editor.inlayHints.fontFamily": "monospace",
     "scm.inputFontSize": 14,
-    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "workbench.colorTheme": "Gruvbox Dark Hard",
     // Programming language specific settings
     // C
     "C_Cpp.intelliSenseEngine": "Disabled",
@@ -79,5 +79,4 @@
         "serve",
         "--debug=localhost:6060", // to investigate memory usage, see profiles
     ],
-
 }
