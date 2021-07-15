@@ -12,7 +12,7 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'junegunn/goyo.vim'
 	Plug 'itchyny/lightline.vim'
     Plug 'rhysd/vim-clang-format'
-    Plug 'gruvbox-community/gruvbox'
+    Plug 'sainnhe/gruvbox-material'
     Plug 'justinmk/vim-syntax-extra'
     Plug 'zackhsi/fzf-tags'
     Plug 'tpope/vim-commentary'
@@ -40,13 +40,12 @@ syntax enable
 filetype plugin on
 set encoding=utf-8
 set number
-set termguicolors
-colorscheme gruvbox
-let g:gruvbox_invert_selection='0'
-let g:gruvbox_bold='1'
-let g:gruvbox_italic='1'
-let g:gruvbox_contrast_dark='medium'
+" colorscheme
+let g:gruvbox_material_background='medium'
+let g:gruvbox_material_enable_bold='1'
 set background=dark
+set termguicolors
+colorscheme gruvbox-material
 set cursorline
 set showtabline=2
 
@@ -233,7 +232,7 @@ let g:NERDTreeWinSize=60
 " Lightline
 set noshowmode
 let g:lightline = {
-	\ 'colorscheme': 'gruvbox',
+	\ 'colorscheme': 'gruvbox_material',
 	\ 'active': {
 	\   'left': [ [ 'mode', 'paste' ],
 	\             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -272,7 +271,7 @@ set hidden
 set nowritebackup
 
 " Better display for messages
-set cmdheight=1
+set cmdheight=2
 
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
