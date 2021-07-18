@@ -42,7 +42,6 @@ set encoding=utf-8
 set number
 " colorscheme
 let g:gruvbox_material_background='medium'
-let g:gruvbox_material_enable_bold='1'
 set background=dark
 set termguicolors
 colorscheme gruvbox-material
