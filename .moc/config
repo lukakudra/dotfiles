@@ -219,7 +219,7 @@ StartInMusicDir = yes
 #
 # Example:    Theme = laras_theme
 #
-Theme = black_theme
+Theme = 30equals
 
 # The theme used when running on an xterm.
 #
@@ -296,7 +296,7 @@ Theme = black_theme
 #             Fastdir4 = /mp3/etc
 #
 Fastdir1 = /home/luka/Music/playlists
-#Fastdir2 = 
+#Fastdir2 =
 Fastdir3 = "/home/luka/Music/Radio Stations"
 #Fastdir4 =
 #Fastdir5 =
@@ -524,7 +524,7 @@ Fastdir3 = "/home/luka/Music/Radio Stations"
 # Examples:   ExecCommand1 = "cp %f /mnt/usb_drive"
 #             ExecCommand2 = "/home/joe/now_playing %I"
 #
-#ExecCommand1 = 
+#ExecCommand1 =
 # ExecCommand2 = "rm %f"
 #ExecCommand3 =
 #ExecCommand4 =
