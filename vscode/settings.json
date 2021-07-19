@@ -54,7 +54,7 @@
             "tab.border": "#3C3836",
             "tab.inactiveBackground": "#282828",
             "tab.hoverBackground": "#282828",
-            "tab.activeBackground": "#3C3836",
+            "tab.activeBackground": "#282828",
             "editor.background": "#282828",
             "editorGutter.background": "#28282800",
             "editorWidget.background": "#282828",
