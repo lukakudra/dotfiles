@@ -1,23 +1,24 @@
 " vim-plug
 
 call plug#begin(stdpath('data') . '/plugged')
-    Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+	Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug '/usr/bin/fzf'
-    Plug 'junegunn/fzf.vim'
-    Plug 'airblade/vim-rooter'
+	Plug '/usr/bin/fzf'
+	Plug 'junegunn/fzf.vim'
+	Plug 'airblade/vim-rooter'
 	Plug 'tpope/vim-fugitive'
-    Plug 'preservim/nerdtree'
+	Plug 'preservim/nerdtree'
 	Plug 'vim-scripts/auto-pairs-gentle'
-    Plug 'junegunn/goyo.vim'
+	Plug 'junegunn/goyo.vim'
 	Plug 'itchyny/lightline.vim'
-    Plug 'rhysd/vim-clang-format'
-    Plug 'sainnhe/gruvbox-material'
-    Plug 'justinmk/vim-syntax-extra'
-    Plug 'zackhsi/fzf-tags'
-    Plug 'tpope/vim-commentary'
-    Plug 'rbgrouleff/bclose.vim'
-    Plug 'francoiscabrol/ranger.vim'
+	Plug 'rhysd/vim-clang-format'
+	Plug 'gruvbox-community/gruvbox'
+	Plug 'sainnhe/gruvbox-material'
+	Plug 'justinmk/vim-syntax-extra'
+	Plug 'zackhsi/fzf-tags'
+	Plug 'tpope/vim-commentary'
+	Plug 'rbgrouleff/bclose.vim'
+	Plug 'francoiscabrol/ranger.vim'
 call plug#end()
 
 " HOWTOs:
@@ -40,11 +41,13 @@ syntax enable
 filetype plugin on
 set encoding=utf-8
 set number
-" colorscheme
-let g:gruvbox_material_background='medium'
+" colorscheme settings
+let g:gruvbox_invert_selection='0'
+let g:gruvbox_italic='1'
+let g:gruvbox_material_palette='original'
 set background=dark
 set termguicolors
-colorscheme gruvbox-material
+colorscheme gruvbox
 set cursorline
 set showtabline=2
 
@@ -111,11 +114,11 @@ cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 " Delete trailing white space on save
 fun! CleanExtraSpaces()
-    let save_cursor = getpos(".")
-    let old_query = getreg('/')
-    silent! %s/\s\+$//e
-    call setpos('.', save_cursor)
-    call setreg('/', old_query)
+	let save_cursor = getpos(".")
+	let old_query = getreg('/')
+	silent! %s/\s\+$//e
+	call setpos('.', save_cursor)
+	call setreg('/', old_query)
 endfun
 
 autocmd BufWritePre * :call CleanExtraSpaces()
@@ -146,12 +149,12 @@ let $FZF_DEFAULT_COMMAND="rg --files --hidden"
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
+\ { 'fg':	   ['fg', 'Normal'],
+  \ 'bg':	   ['bg', 'Normal'],
+  \ 'hl':	   ['fg', 'Comment'],
+  \ 'fg+':	   ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':	   ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':	   ['fg', 'Statement'],
   \ 'info':    ['fg', 'PreProc'],
   \ 'border':  ['fg', 'Ignore'],
   \ 'prompt':  ['fg', 'Conditional'],
@@ -162,7 +165,7 @@ let g:fzf_colors =
 
 "Get Files
 command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
+	\ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
 
 " Get text in files with Rg
 command! -bang -nargs=* Rg
@@ -233,11 +236,11 @@ set noshowmode
 let g:lightline = {
 	\ 'colorscheme': 'gruvbox_material',
 	\ 'active': {
-	\   'left': [ [ 'mode', 'paste' ],
-	\             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+	\	'left': [ [ 'mode', 'paste' ],
+	\			  [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
 	\ },
 	\ 'component_function': {
-	\   'gitbranch': 'FugitiveHead'
+	\	'gitbranch': 'FugitiveHead'
 	\ },
 	\ }
 
@@ -253,15 +256,15 @@ nmap <Leader>c :ClangFormatAutoToggle<CR>
 " COC CONFIG:
 " coc extensions
 let g:coc_global_extensions = [
-    \'coc-json',
-    \'coc-python',
-    \'coc-go',
-    \'coc-yaml',
-    \'coc-cmake',
-    \'coc-vimlsp',
-    \'coc-clangd',
-    \'coc-tsserver'
-    \]
+	\'coc-json',
+	\'coc-python',
+	\'coc-go',
+	\'coc-yaml',
+	\'coc-cmake',
+	\'coc-vimlsp',
+	\'coc-clangd',
+	\'coc-tsserver'
+	\]
 
 " if hidden is not set, TextEdit might fail.
 set hidden
@@ -290,9 +293,9 @@ endif
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 " inoremap <silent><expr> <TAB>
-      " \ pumvisible() ? "\<C-n>" :
-      " \ <SID>check_back_space() ? "\<TAB>" :
-      " \ coc#refresh()
+	  " \ pumvisible() ? "\<C-n>" :
+	  " \ <SID>check_back_space() ? "\<TAB>" :
+	  " \ coc#refresh()
 " inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 " function! s:check_back_space() abort
@@ -324,11 +327,11 @@ nnoremap <silent> gh :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
+	execute 'h '.expand('<cword>')
   elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
+	call CocActionAsync('doHover')
   else
-    execute '!' . &keywordprg . " " . expand('<cword>')
+	execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
 
@@ -352,8 +355,8 @@ augroup mygroup
 augroup end
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+xmap <leader>a	<Plug>(coc-codeaction-selected)
+nmap <leader>a	<Plug>(coc-codeaction-selected)
 
 " Remap for do codeAction of current line
 nmap <leader>ac  <Plug>(coc-codeaction)
@@ -380,31 +383,31 @@ omap ac <Plug>(coc-classobj-a)
 command! -nargs=0 Format :call CocAction('format')
 
 " Use `:Fold` to fold current buffer
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=? Fold :call	 CocAction('fold', <f-args>)
 
 " use `:OR` for organize import of current buffer
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+command! -nargs=0 OR   :call	 CocAction('runCommand', 'editor.action.organizeImport')
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Using CocList
 " Show all diagnostics
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <space>a	:<C-u>CocList diagnostics<cr>
 " Manage extensions
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+nnoremap <silent> <space>e	:<C-u>CocList extensions<cr>
 " Show commands
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+nnoremap <silent> <space>c	:<C-u>CocList commands<cr>
 " Find symbol of current document
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+nnoremap <silent> <space>o	:<C-u>CocList outline<cr>
 " Search workspace symbols
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent> <space>s	:<C-u>CocList -I symbols<cr>
 " Do default action for next item.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+nnoremap <silent> <space>j	:<C-u>CocNext<CR>
 " Do default action for previous item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+nnoremap <silent> <space>k	:<C-u>CocPrev<CR>
 " Resume latest coc list
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+nnoremap <silent> <space>p	:<C-u>CocListResume<CR>
 
 " CocCommands
 nnoremap <leader>s :CocCommand clangd.switchSourceHeader<CR>
