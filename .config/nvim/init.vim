@@ -8,7 +8,7 @@ call plug#begin(stdpath('data') . '/plugged')
 	Plug 'airblade/vim-rooter'
 	Plug 'tpope/vim-fugitive'
 	Plug 'preservim/nerdtree'
-	Plug 'vim-scripts/auto-pairs-gentle'
+	Plug 'jiangmiao/auto-pairs'
 	Plug 'junegunn/goyo.vim'
 	Plug 'itchyny/lightline.vim'
 	Plug 'rhysd/vim-clang-format'
@@ -19,6 +19,7 @@ call plug#begin(stdpath('data') . '/plugged')
 	Plug 'tpope/vim-commentary'
 	Plug 'rbgrouleff/bclose.vim'
 	Plug 'francoiscabrol/ranger.vim'
+	Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " HOWTOs:
@@ -35,39 +36,61 @@ call plug#end()
 " - ^n for anything specified by the 'complete' option
 
 " COMMON SETTINGS:
-let mapleader=","
-set nocompatible
-syntax enable
-filetype plugin on
-set encoding=utf-8
-set number
-" colorscheme settings
+set path+=**
+
+" Nice menu when typing `:find *.py`
+set wildmode=longest,list,full
+set wildmenu
+" Ignore files
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=**/coverage/*
+set wildignore+=**/node_modules/*
+set wildignore+=**/android/*
+set wildignore+=**/ios/*
+set wildignore+=**/.git/*
+
+set relativenumber
+set nu
+" set nohlsearch
+set hidden
+set noerrorbells
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set smartindent
+set nowrap
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set incsearch
+set termguicolors
+set scrolloff=8
+set signcolumn=yes
+set isfname+=@-@
+set noshowmode
+" set showtabline=2
+set mouse+=a
+set ignorecase
+set smartcase
+
+" Give more space for displaying messages.
+set cmdheight=2
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=50
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Colors
 let g:gruvbox_invert_selection='0'
 let g:gruvbox_italic='1'
 let g:gruvbox_material_palette='original'
 set background=dark
 set termguicolors
 colorscheme gruvbox
-set cursorline
-set showtabline=2
-
-set noundofile
-set noswapfile
-set nobackup
-
-set mouse=a
-
-set tabstop=4
-set shiftwidth=4
-set smarttab
-" set expandtab
-set conceallevel=0
-
-set path+=**
-set wildmenu
-set wildmode=longest:full,full
-set ignorecase
-set smartcase
 
 " Disables automatic commenting on newline:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -75,12 +98,33 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Splits open at the bottom and right:
 set splitbelow splitright
 
+let mapleader = " "
+
+inoremap <C-c> <esc>
+
+nnoremap <silent> Q <nop>
+nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
+nnoremap <Leader>+ :vertical resize +5<CR>
+nnoremap <Leader>- :vertical resize -5<CR>
+
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+vnoremap <leader>p "_dP
+
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>Y gg"+yG
+
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
 " Better tabbing
 vnoremap < <gv
 vnoremap > >gv
 
 " Navigating with guides
-map <leader><space> <Esc>/<++><Enter>"_c4l
+map <leader>, <Esc>/<++><Enter>"_c4l
 
 " Surround selected text in visual mode with characters that come in pairs
 vnoremap ;( <ESC><ESC>`<i(<ESC>`>2li)<ESC>
@@ -88,14 +132,6 @@ vnoremap ;" <ESC><ESC>`<i"<ESC>`>2li"<ESC>
 vnoremap ;' <ESC><ESC>`<i'<ESC>`>2li'<ESC>
 vnoremap ;[ <ESC><ESC>`<i[<ESC>`>2li]<ESC>
 vnoremap ;{ <ESC><ESC>`<i{<ESC>`>2li}<ESC>
-
-" Copy to system clipboard
-" * uses PRIMARY
-" + uses CLIPBOARD
-noremap <leader>y "+y
-noremap <leader>p "+p
-noremap <leader>Y "*y
-noremap <leader>P "*p
 
 " Search whole word
 nnoremap <leader>/ /\<\><Left><Left>
@@ -123,6 +159,11 @@ endfun
 
 autocmd BufWritePre * :call CleanExtraSpaces()
 
+" rg derive root
+if executable('rg')
+    let g:rg_derive_root='true'
+endif
+
 " PLUGINS:
 
 " Fugitive configuration
@@ -136,7 +177,7 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 
-map <leader>, :Files<CR>
+map <leader><space> :Files<CR>
 map <leader>b :Buffers<CR>
 nnoremap <leader>g :Rg<CR>
 
