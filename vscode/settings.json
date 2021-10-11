@@ -1,5 +1,6 @@
 {
     "editor.fontFamily": "monospace",
+    "editor.fontSize": 14,
     "keyboard.dispatch": "keyCode",
     "window.menuBarVisibility": "toggle",
     "git.enabled": true,
@@ -85,4 +86,7 @@
         "serve",
         "--debug=localhost:6060", // to investigate memory usage, see profiles
     ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
 }
