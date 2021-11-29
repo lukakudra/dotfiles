@@ -94,6 +94,12 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle # mute soun
 bindsym $mod+y exec pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle # toggle mic mute
 
+# media keys
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
 # brightness keys (requires program light)
 bindsym XF86MonBrightnessUp exec light -A 10 # increase brightness by 10%
 bindsym XF86MonBrightnessDown exec light -U 10 # decrease brightness by 10%
