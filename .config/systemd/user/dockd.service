@@ -1,0 +1,10 @@
+[Unit]
+Description=Thinkpad dock daemon
+
+[Service]
+ExecStart=/usr/bin/dockd --daemon
+Restart=always
+RestartSec=500ms
+
+[Install]
+WantedBy=default.target

@@ -36,7 +36,6 @@ exec --no-startup-id toggle-touchpad
 exec --no-startup-id dunst
 exec --no-startup-id picom -b
 exec --no-startup-id flameshot
-exec --no-startup-id dockd --daemon
 # the following lines disable screen turning off
 exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms
