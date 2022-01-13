@@ -1,3 +1,4 @@
+/* Source: https://www.userchrome.org/firefox-89-styling-proton-ui.html */
 /*** Proton Tabs Tweaks ***/
 
 /* Adjust tab corner shape, optionally remove space below tabs */
@@ -19,35 +20,6 @@
     margin: 0px max(calc(var(--user-tab-rounding) - 3px), 0px) !important;
 }
 
-/* Override Normal Density height to Compact Density height only for tabs */
-
-#TabsToolbar, #tabbrowser-tabs {
-    --tab-min-height: 29px !important;
-}
-    /* Tweak for covering a line at the bottom of the active tab on some themes 8/11/2021 */
-#main-window[sizemode="normal"] #toolbar-menubar[autohide="true"] + #TabsToolbar,
-#main-window[sizemode="normal"] #toolbar-menubar[autohide="true"] + #TabsToolbar #tabbrowser-tabs {
-    --tab-min-height: 30px !important;
-}
-#scrollbutton-up,
-#scrollbutton-down {
-    border-top-width: 0 !important;
-    border-bottom-width: 0 !important;
-}
-
-    /* [Connected Tabs] Set a max height based on min-height plus margin-block: 1px 0 */
-#TabsToolbar, #TabsToolbar > hbox, #TabsToolbar-customization-target, #tabbrowser-arrowscrollbox  {
-    max-height: calc(var(--tab-min-height) + 1px) !important;
-}
-    /* [Connected Tabs] Adjust padding around icons on buttons to avoid crushed images */
-#TabsToolbar-customization-target toolbarbutton > .toolbarbutton-icon,
-#TabsToolbar-customization-target .toolbarbutton-text,
-#TabsToolbar-customization-target .toolbarbutton-badge-stack,
-#scrollbutton-up,#scrollbutton-down {
-    padding-top: 7px !important;
-    padding-bottom: 6px !important;
-}
-
 /* Inactive tabs: Separator line style */
 
 .tabbrowser-tab:not([selected=true]):not([multiselected=true]):not([beforeselected-visible="true"]) .tab-background {
@@ -66,70 +38,25 @@
     padding-right: 0 !important;
 }
 
-/*** Audio Playing / Mute Button side-by-side when sound is playing ***/
+/* Tweak Options as of 9/21/2021; Generated Thu Jan 13 2022 18:25:12 GMT+0100 (Central European Standard Time) */
 
-#TabsToolbar {
-    --user-mute-button-height: 20px;  /* default size is 12px, site icon is 16px */
-}
+/* Source: https://old.reddit.com/r/FirefoxCSS/comments/ns8f99/need_help_to_reduce_spacing_between_pinned/ */
+/* Remove space between pinned and unpinned tabs */
 
-/* Move the mute/unmute button to the right and enlarge it */
-.tab-icon-overlay:not([pinned], [sharing], [crashed]):is([soundplaying], [muted]) {
-    width: var(--user-mute-button-height) !important;
-    height: var(--user-mute-button-height) !important;
-    margin-left: calc(var(--user-mute-button-height) / 2 + 2px) !important; /* pushes icon to the right */
-    margin-right: 2px !important; /* closes up some space before the text */
-    padding: 0 !important; /* allows icon to expand to full size */
-}
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] { margin-inline-start: initial !important; }
 
-/* Move the site icon to the left a bit and adjust position */
-.tab-icon-stack:not([pinned], [sharing], [crashed]):is([soundplaying], [muted]) > :not(.tab-icon-overlay) {
-    margin-left: -4px !important; /* pushes icon to the left */
-    margin-top: calc((var(--user-mute-button-height) - 16px) / 2) !important;  /* keep site icon reasonably positioned */
-}
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/inline_tab_audio_icons.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+/* Shows tab audio icons next to the tab icon, and by default removes the tab secondary line */
 
-/* Override the rules for hover/not hover visibility */
-   /* for mute button */
-.tabbrowser-tab:not(:hover) .tab-icon-overlay:not([pinned], [sharing], [crashed]):is([soundplaying], [muted]),
-   /* for site icon */
-.tabbrowser-tab:hover .tab-icon-stack:not([pinned], [sharing], [crashed]):is([soundplaying], [muted]) > :not(.tab-icon-overlay),
-   /* for site icon with Compact density */
-:root[uidensity="compact"] .tab-icon-stack:not([pinned], [sharing], [crashed]):is([soundplaying], [muted]) > :not(.tab-icon-overlay) {
-    opacity: 1 !important; /* overrides full transparency with full opacity */
+.tabbrowser-tab:not([pinned]) .tab-icon-stack:is([muted],[soundplaying],[activemedia-blocked]){
+  grid-template-areas: "a s";
 }
+.tabbrowser-tab:not([pinned]) .tab-icon-overlay:is([muted],[soundplaying],[activemedia-blocked]){ grid-area: s; }
+.tab-icon-overlay,.tab-icon-image{ opacity: 1 !important; }
 
-/* Color the icon on hover for confirmation or avoidance */
-.tab-icon-overlay:not([pinned], [sharing], [crashed]):is([soundplaying], [muted]):hover {
-    fill: green !important;
-}
-[lwthemetextcolor="bright"] .tab-icon-overlay:not([pinned], [sharing], [crashed]):is([soundplaying], [muted]):hover {
-    fill: lightgreen !important; /* for dark themes */
-}
+/* secondary audio label ain't much use with this style, but feel free to remove the next line if you want to show it. */
+.tab-secondary-label{ display: none }
 
-/* Tweaked Audio playing/Mute button rules for pinned tabs */
-.tab-icon-overlay:not([crashed]):is([pinned], [sharing]):is([soundplaying], [muted]) {
-    width: var(--user-mute-button-height) !important;
-    height: var(--user-mute-button-height) !important;
-    margin-left: 2px !important; /* allow some overlap to reduce expanded width */
-    margin-right: -2px !important; /* reduce empty space on the right */
-    padding: 0 !important; /* allows icon to expand to full size */
-    top: 0 !important; /* align button with site icon */
-}
-.tab-icon-stack:not([crashed]):is([pinned], [sharing]):is([soundplaying], [muted]) > :not(.tab-icon-overlay) {
-    margin-left: -6px !important; /* reduce empty space on the left */
-    margin-top: calc((var(--user-mute-button-height) - 16px) / 2) !important;  /* keep site icon reasonably positioned */
-}
-.tabbrowser-tab:not(:hover) .tab-icon-overlay:not([crashed]):is([pinned], [sharing]):is([soundplaying], [muted]),
-   /* for site icon */
-.tabbrowser-tab:hover .tab-icon-stack:not([crashed]):is([pinned], [sharing]):is([soundplaying], [muted]) > :not(.tab-icon-overlay),
-   /* for site icon with Compact density */
-:root[uidensity="compact"] .tab-icon-stack:not([crashed]):is([pinned], [sharing]):is([soundplaying], [muted]) > :not(.tab-icon-overlay) {
-    opacity: 1 !important; /* overrides full transparency with full opacity */
-}
-.tab-icon-overlay:not([crashed]):is([pinned], [sharing]):is([soundplaying], [muted]):hover {
-    fill: green !important;
-}
-[lwthemetextcolor="bright"] .tab-icon-overlay:not([crashed]):is([pinned], [sharing]):is([soundplaying], [muted]):hover {
-    fill: lightgreen !important; /* for dark themes */
-}
-
-/* Tweak Options as of 9/21/2021; Generated Tue Jan 11 2022 20:28:10 GMT+0100 (Central European Standard Time) */
+/* show the secondary label when video is in PiP */
+.tab-secondary-label[pictureinpicture]{ display: -moz-box }
