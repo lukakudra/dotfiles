@@ -15,10 +15,10 @@
     "editor.hideCursorInOverviewRuler": true,
     "editor.formatOnSave": true,
     "editor.parameterHints.enabled": false,
+    "editor.semanticHighlighting.enabled": false,
     "breadcrumbs.enabled": false,
     "vsicons.dontShowNewVersionMessage": true,
     "json.format.enable": false,
-    "editor.renderIndentGuides": false,
     "editor.quickSuggestions": false,
     "files.trimTrailingWhitespace": true,
     "explorer.confirmDragAndDrop": false,
@@ -27,8 +27,7 @@
     "git.confirmSync": false,
     "update.mode": "none",
     "terminal.external.linuxExec": "alacritty",
-    "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false,
+    "telemetry.telemetryLevel": "off",
     "extensions.ignoreRecommendations": true,
     "workbench.editor.untitled.hint": "hidden",
     "security.workspace.trust.enabled": false,
@@ -42,6 +41,9 @@
     },
     // Programming language specific settings
     // C
+    "files.associations": {
+        "*.h": "c"
+    },
     "C_Cpp.intelliSenseEngine": "Disabled",
     "C_Cpp.errorSquiggles": "Disabled",
     "clangd.arguments": [
@@ -49,7 +51,6 @@
         "-compile-commands-dir=build/",
         "--header-insertion=never"
     ],
-    "clangd.semanticHighlighting": false,
     "clangd.onConfigChanged": "restart",
     "[c]": {
         "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
