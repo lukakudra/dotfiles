@@ -314,6 +314,10 @@ for_window [class=File-roller|Pavucontrol|Nm-connection-editor] floating enable
 # finds out, if available)
 bar {
 	font pango:monospace bold 9
-	status_command i3status
 	workspace_min_width 24
+	status_command i3status
+	colors {
+		background #181716
+		statusline #FDF4DC
+	}
 }
