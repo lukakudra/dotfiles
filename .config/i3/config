@@ -31,7 +31,7 @@ font pango:monospace 9
 floating_modifier $mod
 
 # autostart applications
-exec --no-startup-id hsetroot -solid black
+exec --no-startup-id hsetroot -fill ~/.config/wallpaper.jpg
 exec --no-startup-id toggle-touchpad
 exec --no-startup-id dunst
 exec --no-startup-id picom -b
