@@ -78,73 +78,7 @@
     padding-right: 0 !important;
 }
 
-/*** Audio Playing / Mute Button side-by-side when sound is playing ***/
-
-#TabsToolbar {
-    --user-mute-button-height: 20px;  /* default size is 12px, site icon is 16px */
-}
-
-/* Move the mute/unmute button to the right and enlarge it */
-.tab-icon-overlay:not([pinned], [sharing], [crashed]):is([soundplaying], [muted]) {
-    width: var(--user-mute-button-height) !important;
-    height: var(--user-mute-button-height) !important;
-    margin-left: calc(var(--user-mute-button-height) / 2 + 2px) !important; /* pushes icon to the right */
-    margin-right: 2px !important; /* closes up some space before the text */
-    padding: 0 !important; /* allows icon to expand to full size */
-}
-
-/* Move the site icon to the left a bit and adjust position */
-.tab-icon-stack:not([pinned], [sharing], [crashed]):is([soundplaying], [muted]) > :not(.tab-icon-overlay) {
-    margin-left: -4px !important; /* pushes icon to the left */
-    margin-top: calc((var(--user-mute-button-height) - 16px) / 2) !important;  /* keep site icon reasonably positioned */
-}
-
-/* Override the rules for hover/not hover visibility */
-   /* for mute button */
-.tabbrowser-tab:not(:hover) .tab-icon-overlay:not([pinned], [sharing], [crashed]):is([soundplaying], [muted]),
-   /* for site icon */
-.tabbrowser-tab:hover .tab-icon-stack:not([pinned], [sharing], [crashed]):is([soundplaying], [muted]) > :not(.tab-icon-overlay),
-   /* for site icon with Compact density */
-:root[uidensity="compact"] .tab-icon-stack:not([pinned], [sharing], [crashed]):is([soundplaying], [muted]) > :not(.tab-icon-overlay) {
-    opacity: 1 !important; /* overrides full transparency with full opacity */
-}
-
-/* Color the icon on hover for confirmation or avoidance */
-.tab-icon-overlay:not([pinned], [sharing], [crashed]):is([soundplaying], [muted]):hover {
-    fill: green !important;
-}
-[lwthemetextcolor="bright"] .tab-icon-overlay:not([pinned], [sharing], [crashed]):is([soundplaying], [muted]):hover {
-    fill: lightgreen !important; /* for dark themes */
-}
-
-/* Tweaked Audio playing/Mute button rules for pinned tabs */
-.tab-icon-overlay:not([crashed]):is([pinned], [sharing]):is([soundplaying], [muted]) {
-    width: var(--user-mute-button-height) !important;
-    height: var(--user-mute-button-height) !important;
-    margin-left: 2px !important; /* allow some overlap to reduce expanded width */
-    margin-right: -2px !important; /* reduce empty space on the right */
-    padding: 0 !important; /* allows icon to expand to full size */
-    top: 0 !important; /* align button with site icon */
-}
-.tab-icon-stack:not([crashed]):is([pinned], [sharing]):is([soundplaying], [muted]) > :not(.tab-icon-overlay) {
-    margin-left: -6px !important; /* reduce empty space on the left */
-    margin-top: calc((var(--user-mute-button-height) - 16px) / 2) !important;  /* keep site icon reasonably positioned */
-}
-.tabbrowser-tab:not(:hover) .tab-icon-overlay:not([crashed]):is([pinned], [sharing]):is([soundplaying], [muted]),
-   /* for site icon */
-.tabbrowser-tab:hover .tab-icon-stack:not([crashed]):is([pinned], [sharing]):is([soundplaying], [muted]) > :not(.tab-icon-overlay),
-   /* for site icon with Compact density */
-:root[uidensity="compact"] .tab-icon-stack:not([crashed]):is([pinned], [sharing]):is([soundplaying], [muted]) > :not(.tab-icon-overlay) {
-    opacity: 1 !important; /* overrides full transparency with full opacity */
-}
-.tab-icon-overlay:not([crashed]):is([pinned], [sharing]):is([soundplaying], [muted]):hover {
-    fill: green !important;
-}
-[lwthemetextcolor="bright"] .tab-icon-overlay:not([crashed]):is([pinned], [sharing]):is([soundplaying], [muted]):hover {
-    fill: lightgreen !important; /* for dark themes */
-}
-
-/* Tweak Options as of 1/12/2022; Generated Sun Feb 13 2022 19:21:15 GMT+0100 (Central European Standard Time) */
+/* Tweak Options as of 1/12/2022; Generated Sun Feb 13 2022 22:44:25 GMT+0100 (Central European Standard Time) */
 
 /* Source: https://old.reddit.com/r/FirefoxCSS/comments/ns8f99/need_help_to_reduce_spacing_between_pinned/ */
 /* Remove space between pinned and unpinned tabs */
