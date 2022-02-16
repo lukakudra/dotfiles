@@ -76,7 +76,7 @@ bindsym $mod+x --release exec --no-startup-id slock
 bindsym $mod+c exec --no-startup-id clipmenu -i -fn monospace:size=9
 bindsym $mod+v exec --no-startup-id code
 bindsym $mod+m exec --no-startup-id $term -e mocp
-bindsym Print --release exec --no-startup-id flameshot gui -p ~/Pictures/screenshots
+bindsym Print --release exec --no-startup-id flameshot gui
 bindsym Shift+Print --release exec --no-startup-id flameshot full -c -p ~/Pictures/screenshots
 # bindsym Print --release exec --no-startup-id print-screen-to-clipboard
 # bindsym Shift+Print --release exec --no-startup-id print-screen-to-file
