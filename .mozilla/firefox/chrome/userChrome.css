@@ -34,7 +34,7 @@
 /* Override Normal Density height to Compact Density height only for tabs */
 
 #TabsToolbar, #tabbrowser-tabs {
-    --tab-min-height: 38px !important;
+    --tab-min-height: 37px !important;
 }
     /* Tweak for covering a line at the bottom of the active tab on some themes 8/11/2021 */
 #main-window[sizemode="normal"] #toolbar-menubar[autohide="true"] + #TabsToolbar,
@@ -56,8 +56,8 @@
 #TabsToolbar-customization-target .toolbarbutton-text,
 #TabsToolbar-customization-target .toolbarbutton-badge-stack,
 #scrollbutton-up,#scrollbutton-down {
-    padding-top: 7px !important;
-    padding-bottom: 6px !important;
+    padding-top: 11px !important;
+    padding-bottom: 12px !important;
 }
 
 /* Inactive tabs: Separator line style */
