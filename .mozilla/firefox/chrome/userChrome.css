@@ -31,35 +31,6 @@
     margin: 0px max(calc(var(--user-tab-rounding) - 3px), 0px) !important;
 }
 
-/* Override Normal Density height to Compact Density height only for tabs */
-
-#TabsToolbar, #tabbrowser-tabs {
-    --tab-min-height: 37px !important;
-}
-    /* Tweak for covering a line at the bottom of the active tab on some themes 8/11/2021 */
-#main-window[sizemode="normal"] #toolbar-menubar[autohide="true"] + #TabsToolbar,
-#main-window[sizemode="normal"] #toolbar-menubar[autohide="true"] + #TabsToolbar #tabbrowser-tabs {
-    --tab-min-height: 38px !important;
-}
-#scrollbutton-up,
-#scrollbutton-down {
-    border-top-width: 0 !important;
-    border-bottom-width: 0 !important;
-}
-
-    /* [Connected Tabs] Set a max height based on min-height plus margin-block: 1px 0 */
-#TabsToolbar, #TabsToolbar > hbox, #TabsToolbar-customization-target, #tabbrowser-arrowscrollbox  {
-    max-height: calc(var(--tab-min-height) + 1px) !important;
-}
-    /* [Connected Tabs] Adjust padding around icons on buttons to avoid crushed images */
-#TabsToolbar-customization-target toolbarbutton > .toolbarbutton-icon,
-#TabsToolbar-customization-target .toolbarbutton-text,
-#TabsToolbar-customization-target .toolbarbutton-badge-stack,
-#scrollbutton-up,#scrollbutton-down {
-    padding-top: 11px !important;
-    padding-bottom: 12px !important;
-}
-
 /* Inactive tabs: Separator line style */
 
 .tabbrowser-tab:not([selected=true]):not([multiselected=true]):not([beforeselected-visible="true"]) .tab-background {
@@ -78,7 +49,7 @@
     padding-right: 0 !important;
 }
 
-/* Tweak Options as of 1/12/2022; Generated Sun Feb 13 2022 22:44:25 GMT+0100 (Central European Standard Time) */
+/* Tweak Options as of 1/12/2022; Generated Tue Mar 08 2022 15:46:57 GMT+0100 (Central European Standard Time) */
 
 /* Source: https://old.reddit.com/r/FirefoxCSS/comments/ns8f99/need_help_to_reduce_spacing_between_pinned/ */
 /* Remove space between pinned and unpinned tabs */
