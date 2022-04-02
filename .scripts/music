@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if pgrep -x "mocp" > /dev/null
-then
-    find ~/Music -iname '*.mp3' -o -iname '*.ogg' -o -iname '*.flac' -o -iname '*.wmv' -type f | sed 's/^\.\///g' | sort | fzf | xargs -d '\n' -r mocp -q > /dev/null 2>&1 && mocp -p > /dev/null 2>&1
-else
-    mocp -S > /dev/null 2>&1 && find ~/Music -iname '*.mp3' -o -iname '*.ogg' -o -iname '*.flac' -o -iname '*.wmv' -type f | sed 's/^\.\///g' | sort | fzf | xargs -d '\n' -r mocp -q > /dev/null 2>&1 && mocp -p > /dev/null 2>&1
-fi
-
