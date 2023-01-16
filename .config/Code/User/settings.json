@@ -19,7 +19,11 @@
     "breadcrumbs.enabled": false,
     "vsicons.dontShowNewVersionMessage": true,
     "json.format.enable": false,
-    "editor.quickSuggestions": false,
+    "editor.quickSuggestions": {
+        "comments": "off",
+        "strings": "off",
+        "other": "off"
+    },
     "files.trimTrailingWhitespace": true,
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
@@ -33,6 +37,8 @@
     "security.workspace.trust.enabled": false,
     "editor.inlayHints.fontFamily": "monospace",
     "scm.inputFontSize": 14,
+    "editor.bracketPairColorization.enabled": false,
+    "editor.inlayHints.enabled": "off",
     "workbench.colorTheme": "Gruvbox Dark Medium",
     "workbench.colorCustomizations": {
         "[Gruvbox Dark Medium]": {
