@@ -136,6 +136,10 @@ export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 export PATH="$PATH:$GOBIN"
 
+# Make java applications follow GTK theme
+export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+
 # Aliases
 alias v=nvim
 alias vim=nvim
+alias sweethome3d="GTK_THEME=Adwaita sweethome3d"
