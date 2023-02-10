@@ -34,7 +34,6 @@ floating_modifier $mod
 exec --no-startup-id hsetroot -fill ~/.config/wallpaper.jpg
 exec --no-startup-id toggle-touchpad
 exec --no-startup-id dunst
-exec --no-startup-id picom -b
 exec --no-startup-id flameshot
 # the following lines disable screen turning off
 exec --no-startup-id xset s off
