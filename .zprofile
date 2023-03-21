@@ -14,8 +14,9 @@ export npm_config_prefix=~/.node_modules
 export EDITOR="nvim"
 export VISUAL="nvim"
 export TERMINAL="alacritty"
-# export BROWSER="firefox"
+export BROWSER="firefox"
 export READER="zathura"
+export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
 
 if [[ "$(tty)" = "/dev/tty1" ]]; then
     pgrep i3 || exec startx
