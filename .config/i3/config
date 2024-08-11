@@ -65,6 +65,12 @@ bindsym $mod+u [instance="dropdown_text"] scratchpad show, move position center
 for_window [instance="dropdown_text"] floating enable, resize set 1300 700, \
 move scratchpad
 
+# solaar software for configuring logitech mouse
+exec --no-startup-id /usr/bin/solaar --window=only --restart-on-wake-up &
+bindsym $mod+m [class="Solaar"] scratchpad show, move position center
+for_window [class="Solaar"] floating enable, resize set 1300 700, \
+move scratchpad
+
 # start frequently used programs with keyboard shortcuts
 bindsym $mod+Shift+Return exec --no-startup-id samedir
 bindsym $mod+i exec --no-startup-id firefox
@@ -75,7 +81,6 @@ bindsym $mod+x --release exec --no-startup-id slock
 bindsym $mod+c exec --no-startup-id clipmenu -i -fn monospace:size=9
 bindsym $mod+v exec --no-startup-id code
 bindsym Print --release exec --no-startup-id flameshot gui
-bindsym $mod+m exec --no-startup-id deadbeef
 bindsym Shift+Print --release exec --no-startup-id flameshot full -c -p ~/Pictures/screenshots
 # bindsym Print --release exec --no-startup-id print-screen-to-clipboard
 # bindsym Shift+Print --release exec --no-startup-id print-screen-to-file
