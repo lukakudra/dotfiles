@@ -32,7 +32,7 @@ floating_modifier $mod
 
 # autostart applications
 exec --no-startup-id picom
-exec --no-startup-id feh --bg-scale ~/.config/wallpaper.jpg
+exec --no-startup-id feh --bg-scale ~/.config/wallpaper
 exec --no-startup-id toggle-touchpad
 exec --no-startup-id dunst
 exec --no-startup-id flameshot
@@ -74,7 +74,7 @@ move scratchpad
 
 # start frequently used programs with keyboard shortcuts
 bindsym $mod+Shift+Return exec --no-startup-id samedir
-bindsym $mod+i exec --no-startup-id firefox
+bindsym $mod+i exec --no-startup-id chromium
 bindsym $mod+e exec --no-startup-id $term -e ranger
 bindsym $mod+p exec --no-startup-id pavucontrol
 bindsym $mod+n exec --no-startup-id thunderbird
