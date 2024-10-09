@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# This appears as the new monitor on the list of screens to share.
+# The syntax for geometry is [w]/[mmw]x[h]/[mmh]+[x]+[y].
+# mmw/mmh is real size in millimeters, it is ok to use 1 mm.
+# ┌─────────────────┬─────────────────┐
+# │                 │                 │
+# │                 y                 │
+# │                 │                 │
+# │                 │                 │
+# │                 ▼                 │
+# ├───────x────────►┌────────w────────┤
+# │                 │                 │
+# │                 │                 │
+# │                 h                 h
+# │                 │                 │
+# │                 │                 │
+# └─────────────────┴────────w────────┘
+
+usage () {
+    cat <<HELP_USAGE
+
+    $0  -set
+    $0  -del
+
+   -set  Set the monitor for screensharing
+   -del  Delete the monitor for screensharing
+HELP_USAGE
+}
+
+if [ -z "$1" ] ; then
+	usage
+	exit 0
+fi
+
+if [ "$1" = "-set" ] ; then
+    xrandr --setmonitor screenshare 1920/1x1080/1+0+0 none
+elif [ "$1" = "-del" ] ; then
+    xrandr --delmonitor screenshare
+fi
