@@ -7,7 +7,6 @@
     "search.followSymlinks": false,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.iconTheme": "vscode-icons",
-    "workbench.activityBar.visible": true,
     "workbench.list.openMode": "doubleClick",
     "workbench.editor.enablePreview": false,
     "workbench.editor.tabSizing": "shrink",
@@ -33,7 +32,6 @@
     "terminal.external.linuxExec": "alacritty",
     "telemetry.telemetryLevel": "off",
     "extensions.ignoreRecommendations": true,
-    "workbench.editor.untitled.hint": "hidden",
     "security.workspace.trust.enabled": false,
     "editor.inlayHints.fontFamily": "monospace",
     "scm.inputFontSize": 14,
@@ -48,10 +46,11 @@
     // Programming language specific settings
     // C
     "files.associations": {
-        "*.h": "c"
+        "*.h": "c",
+        "*.txt": "plaintext"
     },
-    "C_Cpp.intelliSenseEngine": "Disabled",
-    "C_Cpp.errorSquiggles": "Disabled",
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "C_Cpp.errorSquiggles": "disabled",
     "clangd.arguments": [
         "-background-index",
         "-compile-commands-dir=build/",
@@ -67,7 +66,7 @@
     "[go]": {
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true,
+            "source.organizeImports": "explicit"
         },
         // Optional: Disable snippets, as they conflict with completion ranking.
         "editor.snippetSuggestions": "none",
@@ -75,7 +74,7 @@
     "[go.mod]": {
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true,
+            "source.organizeImports": "explicit"
         },
     },
     "gopls": {
@@ -95,5 +94,12 @@
     ],
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
+    },
+    "workbench.editor.empty.hint": "hidden",
+    "update.showReleaseNotes": false,
+    "[go][go.mod]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
     },
 }
