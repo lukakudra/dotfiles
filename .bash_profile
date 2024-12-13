@@ -12,7 +12,7 @@ export PATH="$PATH:$GOBIN"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export TERMINAL="alacritty"
-export BROWSER="chromium"
+export BROWSER="firefox"
 export READER="zathura"
 
 if [[ "$(tty)" = "/dev/tty1" ]]; then
